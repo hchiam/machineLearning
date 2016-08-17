@@ -4,12 +4,12 @@ i2 = 1
 w1 = -1
 w2 = -1
 a = 1
+s = 0.1
 for iter in range(5):
     g = i1*w1 + i2*w2
-    e = (a-g)
-    dw1 = e*i1
-    dw2 = e*i2
-    w1 = w1 + dw1
-    w2 = w2 + dw2
-    print g, e, w1, w2, dw1, dw2
+    e = abs(a-g)
+    d = s*(a-g)/abs(a-g)
+    w1 = w1 + d
+    w2 = w2 + d
+    print g, e, w1, w2, d
 print g
