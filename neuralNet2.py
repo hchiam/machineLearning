@@ -19,3 +19,5 @@ for iter in range(3): # train by going through iterations
     print g, e, w1, w2, dw1, dw2 # print out to let us see what's happening
 
 print g # output final "guess"
+
+# expected output "guess" should approximate the "answer" = 1

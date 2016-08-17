@@ -25,3 +25,5 @@ for iter in range(52): # train by going through iterations
         print g, e, w1, w2, dw1*s, dw2*s, d # print out to let us see what's happening
 
 print g # output final "guess"
+
+# expected output "guess" should approximate the "answer" = 1
