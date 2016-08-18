@@ -1,6 +1,6 @@
 import math
 
-# modified version of neuralNet2.py
+# modified version of neuralNet2.py and neuralNet2.py, combined
 # --> now with a hidden layer! (and sensitivity)
 # --> and with sigmoid! (Though slower than neuralNet2.py for one set of inputs, I need sigmoid() in order to avoid instability of numbers going to infinity when I introduce new inputs.)
 
