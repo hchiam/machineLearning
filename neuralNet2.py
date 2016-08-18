@@ -3,7 +3,7 @@
 i1 = 0 # input 1
 i2 = 1 # input 2
 w1 = -1 # weight 1
-w2 = -1 # weight 2
+w2 =    # weight 2
 a = 1 # the correct "answer"
 
 for iter in range(3): # train by going through iterations

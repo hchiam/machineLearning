@@ -2,6 +2,6 @@
 Simple test code for machine learning.
 
 * `neuralNet1.py`:  version 1 example of a very simplified neural network, using **sensitivity** parameter.
-* `neuralNet2.py`:  version 2 example of a very simplified neural network, with **weighting** based on "responsibilities" of different **inputs**.
+* `neuralNet2.py`:  version 2 example of a very simplified neural network, with **weighting** based on "responsibilities" of different **inputs**. (This one seems really fast but may be unstable or naive because it's basically using learning sensitivity = 1.)
 * `neuralNet3.py`:  version 3 example of a very simplified neural network that **combines** version 1 and version 2, combining sensitivity parameter and "responsibilities" of different inputs.
 * `neuralNet_iamtrask.py`:  2-layer neural net code from: http://iamtrask.github.io/2015/07/12/basic-python-network.  Requires NumPy installed to run.
