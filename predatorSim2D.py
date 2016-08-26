@@ -21,13 +21,12 @@ def drawDotHere(x,y,colour):
     turtle.dot(50)
 
 def detectTarget():
-    if abs(xT-x) > 1:
+    threshold = 1
+    if abs(xT-x) > threshold:
         if x < xT:
             leftEye, rightEye = 0, 1
         elif x > xT:
             leftEye, rightEye = 1, 0
-        elif x == xT:
-            leftEye, rightEye = 0, 0
     else:
         leftEye, rightEye = 0, 0
     return leftEye, rightEye
@@ -59,10 +58,11 @@ turtle.bgcolor("light grey")
 
 
 # initialize positions:
-x,y,xT,yT=-100,0,100,0
+x,y,xT,yT = -100,0,100,0
 drawDotHere(xT,yT,"blue")
 drawDotHere(x,y,"red")
-xORIGINAL,yORIGINAL,xTORIGINAL,yTORIGINAL=-100,0,100,0
+xORIGINAL,yORIGINAL,xTORIGINAL,yTORIGINAL = x,y,xT,yT
+
 
 # initialize variables:
 i1, i2 = detectTarget() # input values
@@ -75,7 +75,7 @@ o2 = i1*w12 + i2*w22 # calculate "guess" from input and weights
 o1 = sigmoid(o1) # keep output value within allowed range
 o2 = sigmoid(o2) # keep output value within allowed range
 s = 0.1 # sensitivity to error
-speed = 20 # speed of motion
+speed = 20 # speed of motion of the "organism"
 
 
 # train by going through iterations:
@@ -87,8 +87,7 @@ for iter in range(30):
     i1, i2 = detectTarget()
     
     # get error:
-    leftEye, rightEye = detectTarget()
-    e = -leftEye +rightEye
+    e = -i1 +i2
     
     # get changes in weights based on error and input values:
     dw11 = e*i1 # calculate change in weight 1-1 based on output error and input 1
@@ -103,8 +102,8 @@ for iter in range(30):
     w22 += dw22*s
     
     # get output values:
-    o1 = i1*w11 + i2*w21 # calculate "guess" from input and weights
-    o2 = i1*w12 + i2*w22 # calculate "guess" from input and weights
+    o1 = i1*w11 + i2*w21 # calculate output from input and weights
+    o2 = i1*w12 + i2*w22 # calculate output from input and weights
     o1 = sigmoid(o1) # keep output value within allowed range
     o2 = sigmoid(o2) # keep output value within allowed range
     
