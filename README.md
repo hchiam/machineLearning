@@ -3,6 +3,8 @@ Simple test code for machine learning.
 
 No need to install a ton of things to import.  Just read some commented code and get it running quickly to gather some intuitions.
 
+You can have it even simpler and just run code in your browser without installing anything:  [here](http://hchiam.blogspot.ca/2016/08/machine-learning-very-basic-code.html).
+
 ![simple net](https://github.com/hchiam/machineLearning/blob/master/simpleNet.jpg "a simple neural network with two input neurons and one output neuron for the 'guess'")
 
 * `neuralNet1.py`:  version 1 example of a very simplified neural network, using **sensitivity** parameter.
