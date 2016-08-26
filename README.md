@@ -1,5 +1,7 @@
 # machineLearning
-Simple test code for machine learning.  No need to install a ton of things to import.  Just read some commented code and get it running quickly to gather some intuitions.
+Simple test code for machine learning.  
+
+No need to install a ton of things to import.  Just read some commented code and get it running quickly to gather some intuitions.
 
 ![simple net](https://github.com/hchiam/machineLearning/blob/master/simpleNet.jpg "a simple neural network with two input neurons and one output neuron for the 'guess'")
 
