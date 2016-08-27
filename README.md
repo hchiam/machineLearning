@@ -16,6 +16,6 @@ You can have it even simpler and just run code in your browser without installin
 * `neuralNet4_Layered.py`:  version 4 example of a neural network that kinda combines version 2 and version 3, with learning error **sensitivity**, but also with a **hidden layer**.  It also has a transformed version of the **sigmoid** function that goes from -1 to 1.
 * `neuralNet_iamtrask.py`:  2-layer neural net code from: http://iamtrask.github.io/2015/07/12/basic-python-network.  Requires NumPy installed to run.
 
-![sim net](https://github.com/hchiam/machineLearning/blob/master/neuralNetwork2-2.jpg "a screenshot of the simulation")![simulation](https://github.com/hchiam/machineLearning/blob/master/simulationScreenshot.png "a screenshot of the simulation")
+![sim net](https://github.com/hchiam/machineLearning/blob/master/neuralNetwork2-2.jpg "a screenshot of the simulation") = ![simulation](https://github.com/hchiam/machineLearning/blob/master/simulationScreenshot.png "a screenshot of the simulation")
 
 * `predatorSim2D.py`:  an animated simulation of a "predator" learning to move towards a target.  Based on [my turtle code](https://github.com/hchiam/code7/blob/master/problem3.py) and also a mix of my neural nets above:  sensitivty parameter, weightings, inputs, but no hidden layer.
