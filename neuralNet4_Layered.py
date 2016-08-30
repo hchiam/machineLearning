@@ -82,21 +82,23 @@ train(5)
 
 print'________________________________________________'
 
+# test how fast it learns if I change the input (and keep the "answer" the same)
 i1 = 1
 
 train(5)
 
 print'________________________________________________'
 
-print 'sigmoid(-1) =', sigmoid(-1)
-print 'sigmoid(1) =', sigmoid(1)
-print 'sigmoid(-2) =', sigmoid(-2)
-print 'sigmoid(2) =', sigmoid(2)
-print 'sigmoid(-3) =', sigmoid(-3)
-print 'sigmoid(3) =', sigmoid(3)
-print 'sigmoid(-10) =', sigmoid(-10)
-print 'sigmoid(10) =', sigmoid(10)
-print 'sigmoid(-25) =', sigmoid(-25)
-print 'sigmoid(25) =', sigmoid(25)
-
-print'________________________________________________'
+# sigmoid tests:
+#print 'sigmoid(-1) =', sigmoid(-1)
+#print 'sigmoid(1) =', sigmoid(1)
+#print 'sigmoid(-2) =', sigmoid(-2)
+#print 'sigmoid(2) =', sigmoid(2)
+#print 'sigmoid(-3) =', sigmoid(-3)
+#print 'sigmoid(3) =', sigmoid(3)
+#print 'sigmoid(-10) =', sigmoid(-10)
+#print 'sigmoid(10) =', sigmoid(10)
+#print 'sigmoid(-25) =', sigmoid(-25)
+#print 'sigmoid(25) =', sigmoid(25)
+#
+#print'________________________________________________'
