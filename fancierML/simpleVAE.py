@@ -56,6 +56,21 @@ def sumAcrossRows(matrix):
     return np.sum(matrix, axis=1)
 
 
+def subtractElementWise(a,matrix):
+    result = [a-element for element in matrix]
+    return result
+
+
+def addElementWise(a,matrix):
+    result = [a+element for element in matrix]
+    return result
+
+
+def multiplyElementWise(a,matrix):
+    result = [a*element for element in matrix]
+    return result
+
+
 def getZ():
     #z = sigmoidElementWise(np.sum(np.multiply(i,w),axis=1))
     global i, w1, z
@@ -103,13 +118,13 @@ propagate() # i --(w1)--> z --(w2)--> g (vs. a=i)
 
 print
 print 'input or answer =\n',i,'\n'
-time.sleep(1)
+time.sleep(0.5)
 print 'input weights =\n',w1,'\n'
-time.sleep(1)
+time.sleep(0.5)
 print 'latent layer =\n',z,'\n'
-time.sleep(1)
+time.sleep(0.5)
 print 'output weights =\n',w2,'\n'
-time.sleep(1)
+time.sleep(0.5)
 print 'guess =\n',g,'\n'
 print '-> goal:  get the guess to approach ~ input answer'
 print
@@ -128,28 +143,19 @@ def train(numOfIters): # i --(w1)--> z --(w2)--> g (vs. a=i)
     global i, w1, z, w2, g, a
     
     for iter in range(numOfIters): # train by going through iterations
+                # error:
+        e = subtractElementWise( a, g )
+        
+        # calculate change in weights based on output error and input:
+        dw2 = multiplyElementWise( s, multiplyElementWise( e, z ) )
+        dw1 = multiplyElementWise( s, matrixMultiply( d, i ) )
+        
+        # update weights:
+        w2 = addElementWise( dw2, w2 )
+        w1 = addElementWise( dw1, w1 )
         
         # calculate "guess" from input and weights:
         propagate()
-        
-        # error:
-        e = (a-g)
-        
-        # calculate change in weights based on output error and input:
-        dwh1 = e*h1
-        dwh2 = e*h2
-        dw1h1 = dwh1*i1
-        dw1h2 = dwh2*i1
-        dw2h1 = dwh1*i2
-        dw2h2 = dwh2*i2
-        
-        # update weights:
-        wh1 += dwh1*s
-        wh2 += dwh2*s
-        w1h1 += dw1h1*s
-        w1h2 += dw1h2*s
-        w1h1 += dw1h1*s
-        w2h2 += dw2h2*s
         
         # print out to let us see what's happening:    print 'e =', round(e,3)
         printouts()
