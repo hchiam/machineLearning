@@ -14,6 +14,11 @@ def multiplyListsElementWise(lista,listb):
     return result
 
 
+def addListsElementWise(lista,listb):
+    result = [a+b for a,b in zip(lista,listb)]
+    return result
+
+
 def functionElementWise(function,matrix):
     result = [function(element) for element in matrix]
     return result
@@ -47,11 +52,11 @@ def getG():
 
 def printouts():
     global i, w1, z, w2, g
-    print
+    print'________________________________________________'
     print 'input or answer =\n',i,'\n'
-    print 'input weights =\n',w1,'\n'
+    #print 'input weights =\n',w1,'\n'
     print 'latent layer =\n',z,'\n'
-    print 'output weights =\n',w2,'\n'
+    #print 'output weights =\n',w2,'\n'
     print 'guess =\n',g,'\n'
 
 
@@ -99,26 +104,34 @@ def train(numOfIters): # i --(w1)--> z --(w2)--> g (vs. a=i)
     
     for iter in range(numOfIters): # train by going through iterations
         
-        print 'a=',a
-        print 'g=',g
-        
         e = []
         # error:
-        for i in range(len(a)):
-            e.append(a[i]-g[i])
-    
-        print 's=',s
-        print 'e=',e
-        print'z=',z
+        for index in range(len(a)):
+            e.append(a[index]-g[index])
         
         # calculate change in weights based on output error and input:
-        dw2 = multiplyElementWise( s, np.matrix([[e[0]*z[0], e[1]*z[0], e[2]*z[0]], [e[0]*z[1], e[1]*z[1], e[2]*z[1]]]))
-        print 'dw2=', dw2
-        dw1 = multiplyElementWise( s, matrixMultiply( d, i ) )
+        dw21 = [e[0]*z[0], e[0]*z[1]]
+        dw22 = [e[1]*z[0], e[1]*z[1]]
+        dw23 = [e[2]*z[0], e[2]*z[1]]
+        dw21 = map(lambda x: s*x, dw21)
+        dw22 = map(lambda x: s*x, dw22)
+        dw23 = map(lambda x: s*x, dw23)
+        dw2 = [dw21, dw22, dw23]
         
         # update weights:
-        w2 = addElementWise( dw2, w2 )
-        w1 = addElementWise( dw1, w1 )
+        w2 = addListsElementWise( w2, dw2 )
+        
+        # calculate change in weights based on output error and input:
+        dw11 = [ dw2[0][0]*i[0], dw2[0][1]*i[0] ]
+        dw12 = [ dw2[1][0]*i[1], dw2[1][1]*i[1] ]
+        dw13 = [ dw2[2][0]*i[2], dw2[2][1]*i[2] ]
+        dw11 = map(lambda x: s*x, dw11)
+        dw12 = map(lambda x: s*x, dw12)
+        dw13 = map(lambda x: s*x, dw13)
+        dw1 = [dw11, dw12, dw13]
+        
+        # update weights:
+        w1 = addListsElementWise( w1, dw1 )
         
         # calculate "guess" from input and weights:
         getZ()
@@ -136,6 +149,6 @@ print 'answer =\n', a
 
 print'________________________________________________'
 
-#train(5)
+train(5)
 
 print'________________________________________________'
