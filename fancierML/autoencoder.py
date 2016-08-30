@@ -21,25 +21,28 @@ def functionElementWise(function,matrix):
 
 def getZ():
     global i, w1, z1, z2, z
-    z1 = sum( multiplyListsElementWise(w1[0],i) )
-    z2 = sum( multiplyListsElementWise(w1[1],i) )
+    # get weighted contributions from input
+    z1 = i[0]*w1[0][0] + i[1]*w1[0][1] + i[1]*w1[0][2]
+    z2 = i[0]*w1[1][0] + i[1]*w1[1][1] + i[1]*w1[1][2]
+    # keep z1 and z2 nodes of latent layer in range
     z1 = sigmoid(z1)
     z2 = sigmoid(z2)
+    # put it back together into one layer
     z = [z1, z2]
+
 
 def getG():
     global z1, z2, w2, g1, g2, g3, g
+    # get weighted contributions from latent layer
     g1 = z1*w2[0][0] + z2*w2[0][1]
     g2 = z1*w2[1][0] + z2*w2[1][1]
     g3 = z1*w2[2][0] + z2*w2[2][1]
+    # keep g1, g2, and g3 nodes of output "guess" layer in range
     g1 = sigmoid(g1)
     g2 = sigmoid(g2)
     g3 = sigmoid(g3)
+    # put it back together into one layer
     g = [g1,g2,g3]
-
-def propagate():
-    getZ()
-    getG()
 
 
 def printouts():
@@ -59,27 +62,13 @@ i = [1,1,1]
 
 w1 = [[-1, -0.5, 0],[ -0.7, 0.1, -1]]
 
-#z1 = sum( multiplyListsElementWise(w1[0],i) )
-#z2 = sum( multiplyListsElementWise(w1[1],i) )
-#
-#z1 = sigmoid(z1)
-#z2 = sigmoid(z2)
-#
-#z = [z1, z2]
+getZ()
 
 w2 = [[0, -0.1],[-1, 0.2], [-1, 0]]
 
-#g1 = z1*w2[0][0] + z2*w2[0][1]
-#g2 = z1*w2[1][0] + z2*w2[1][1]
-#g3 = z1*w2[2][0] + z2*w2[2][1]
-#
-#g1 = sigmoid(g1)
-#g2 = sigmoid(g2)
-#g3 = sigmoid(g3)
-#
-#g = [g1,g2,g3]
+getG()
 
-propagate() # i --(w1)--> z --(w2)--> g (vs. a=i)
+# i --(w1)--> z --(w2)--> g (vs. a=i)
 
 a = i
 
@@ -113,9 +102,11 @@ def train(numOfIters): # i --(w1)--> z --(w2)--> g (vs. a=i)
         print 'a=',a
         print 'g=',g
         
+        e = []
         # error:
-        e = a-g
-        
+        for i in range(len(a)):
+            e.append(a[i]-g[i])
+    
         print 's=',s
         print 'e=',e
         print'z=',z
@@ -130,7 +121,8 @@ def train(numOfIters): # i --(w1)--> z --(w2)--> g (vs. a=i)
         w1 = addElementWise( dw1, w1 )
         
         # calculate "guess" from input and weights:
-        propagate()
+        getZ()
+        getG()
         
         # print out to let us see what's happening:    print 'e =', round(e,3)
         printouts()
