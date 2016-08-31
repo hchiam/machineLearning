@@ -19,7 +19,7 @@ You can have it even simpler and just run code in your browser without installin
 
 * `predatorSim2D.py`:  an animated simulation of a "predator" learning to move towards a target.  Based on [my turtle code](https://github.com/hchiam/code7/blob/master/problem3.py) and also a mix of my neural nets above:  sensitivty parameter, weightings, inputs, but no hidden layer.
 
-# Installation required but still pretty simple:
+# Extra installation required but still pretty simple:
 
 * `neuralNet_iamtrask.py`:  "11 lines of code" for a 2-layer neural net code from [http://iamtrask.github.io/2015/07/12/basic-python-network](http://iamtrask.github.io/2015/07/12/basic-python-network).  Requires NumPy installed to run.
 
