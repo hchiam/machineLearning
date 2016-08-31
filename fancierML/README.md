@@ -1,4 +1,4 @@
-# Variational Autoencoder
+# simpleVAE.py:  Variational Autoencoder
 
 My attempt to create a super simple (if over-simplified) version of a VAE (Variational Auto-Encoder).
 
@@ -22,4 +22,3 @@ Backpropagate the error.
 Also:  an extra term that penalizes how much information the latent representation contains, to encourage using concise codes for the datapoints and find underlying structure that explains the most data with the least bits.
 
 The 2 blue boxes in figure 4 (right side) for training time.  And then in testing time I sample from a (normally-distributed) random set of numbers to put into the decoder (figure 5, red box) to generate examples similar to the input.
-

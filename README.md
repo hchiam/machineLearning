@@ -14,8 +14,13 @@ You can have it even simpler and just run code in your browser without installin
 ![layered net](https://github.com/hchiam/machineLearning/blob/master/pictures/layeredNet.jpg "a layered neural network with two input neurons, two hidden neurons, and one output neuron for the 'guess'")
 
 * `neuralNet4_Layered.py`:  version 4 example of a neural network that kinda combines version 2 and version 3, with learning error **sensitivity**, but also with a **hidden layer**.  It also has a transformed version of the **sigmoid** function that goes from -1 to 1.
-* `neuralNet_iamtrask.py`:  2-layer neural net code from: http://iamtrask.github.io/2015/07/12/basic-python-network.  Requires NumPy installed to run.
 
 ![sim net](https://github.com/hchiam/machineLearning/blob/master/pictures/neuralNetwork2-2.jpg "a screenshot of the simulation")   ![simulation](https://github.com/hchiam/machineLearning/blob/master/pictures/simulationScreenshot.png "a screenshot of the simulation")
 
 * `predatorSim2D.py`:  an animated simulation of a "predator" learning to move towards a target.  Based on [my turtle code](https://github.com/hchiam/code7/blob/master/problem3.py) and also a mix of my neural nets above:  sensitivty parameter, weightings, inputs, but no hidden layer.
+
+# Installation required but still pretty simple:
+
+* `googleExample.py`:  machine learning in 6 lines of code, from [https://youtu.be/cKxRvEZd3Mw](https://youtu.be/cKxRvEZd3Mw), listed in the [Google Developers](https://www.youtube.com/user/GoogleDevelopers) channel on YouTube.  Requires scikit-learn (sklearn) installed to run.
+
+* `neuralNet_iamtrask.py`:  2-layer neural net code from: [http://iamtrask.github.io/2015/07/12/basic-python-network](http://iamtrask.github.io/2015/07/12/basic-python-network).  Requires NumPy installed to run.
