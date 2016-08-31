@@ -1,3 +1,7 @@
+# autoencoder.py:  autoencoder
+
+My attempt to create an autoencoder without installing extra things.
+
 # simpleVAE.py:  Variational Autoencoder
 
 My attempt to create a super simple (if over-simplified) version of a VAE (Variational Auto-Encoder).
