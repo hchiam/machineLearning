@@ -22,7 +22,7 @@ from scipy.spatial import distance
 def eucDist(a,b):
     return distance.euclidean(a,b)
 
-class KNearestNeighbours():
+class KNearestNeighbours_barebones():
     
     def fit(self, X_train, y_train): # "memorize" the x data and corresponding y labels
         self.X_train = X_train
@@ -61,7 +61,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = .5)
 
 # create classifier
 #my_classifier = randomGuessClassifier()
-my_classifier = KNearestNeighbours()
+my_classifier = KNearestNeighbours_barebones()
 
 # train classifier
 my_classifier.fit(X_train, y_train)
