@@ -23,6 +23,8 @@ You can have it even simpler and just run code in your browser without installin
 
 * `neuralNet_iamtrask.py`:  "11 lines of code" for a 2-layer neural net code from [http://iamtrask.github.io/2015/07/12/basic-python-network](http://iamtrask.github.io/2015/07/12/basic-python-network).  Requires NumPy installed to run.
 
+The next few are based on "Machine Learning Recipes with Josh Gordon" at:  [https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
+
 * `googleExample.py`:  machine learning in 6 lines of code, from [https://youtu.be/cKxRvEZd3Mw](https://youtu.be/cKxRvEZd3Mw), listed under the [Google Developers](https://www.youtube.com/user/GoogleDevelopers) channel on YouTube.  Requires scikit-learn (sklearn) installed to run.  Decision tree classifier.  Supervised learning.
 
 * `googleExample2.py`:  decision tree classifier applied to Fisher's Iris flower data set, from [https://www.youtube.com/watch?v=tNa99PG8hR8](https://www.youtube.com/watch?v=tNa99PG8hR8), listed under the [Google Developers](https://www.youtube.com/user/GoogleDevelopers) channel on YouTube.  Requires scikit-learn and NumPy installed to run.  You can also get a visualization (watch the video for how).
@@ -30,5 +32,3 @@ You can have it even simpler and just run code in your browser without installin
 * `googleExample3.py`:  a higher-level take on the decision tree classifier in `googleExample2.py`.  Requires scikit-learn installed to run.
 
 * `googleExample4.py`:  building your our classifier.  `randomGuessClassifier()` and `KNearestNeighbours_barebones()`.
-
-See "Machine Learning Recipes with Josh Gordon" at:  [https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
