@@ -1,4 +1,4 @@
-# from https://www.youtube.com/watch?v=84gqSbLcBFE
+# for episode 4 from https://www.youtube.com/watch?v=84gqSbLcBFE
 
 # import a dataset
 from sklearn import datasets
