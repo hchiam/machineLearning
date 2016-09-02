@@ -17,7 +17,7 @@ You can have it even simpler and just run code in your browser without installin
 
 ![sim net](https://github.com/hchiam/machineLearning/blob/master/pictures/neuralNetwork2-2.jpg "a simple neural network with two inputs neurons and two output neurons to let the 'predator' move around")   ![simulation](https://github.com/hchiam/machineLearning/blob/master/pictures/simulationScreenshot.png "a screenshot of the simulation")
 
-* `predatorSim2D.py`:  an animated simulation of a "predator" learning to move towards a target.  Based on [my turtle code](https://github.com/hchiam/code7/blob/master/problem3.py) and also a mix of my neural nets above:  sensitivty parameter, weightings, inputs, but no hidden layer.
+* `predatorSim2D.py`:  an animated simulation of a "predator" learning to move towards a target.  Based on [my turtle code](https://github.com/hchiam/code7/blob/master/problem3.py) and also a mix of my neural nets above:  sensitivity parameter, weightings, inputs, but no hidden layer.
 
 # Extra installation required but still pretty simple:
 
