@@ -23,7 +23,7 @@ You can have it even simpler and just run code in your browser without installin
 
 * `neuralNet_iamtrask.py`:  "11 lines of code" for a 2-layer neural net code from [http://iamtrask.github.io/2015/07/12/basic-python-network](http://iamtrask.github.io/2015/07/12/basic-python-network).  Requires NumPy installed to run.
 
-The next few are based on "Machine Learning Recipes with Josh Gordon" at:  [https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal)
+The next few code samples are based on "Machine Learning Recipes with Josh Gordon" at:  [https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal](https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal), which is also listed in the [Google Developers YouTube channel](https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw).
 
 * `googleExample.py`:  machine learning in 6 lines of code, from [https://youtu.be/cKxRvEZd3Mw](https://youtu.be/cKxRvEZd3Mw), listed under the [Google Developers](https://www.youtube.com/user/GoogleDevelopers) channel on YouTube.  Requires scikit-learn (sklearn) installed to run.  Decision tree classifier.  Supervised learning.
 
