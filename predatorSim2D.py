@@ -97,7 +97,7 @@ speed = 20 # speed of motion of the "organism"
 # train by going through iterations:
 for iter in range(100):
     
-    time.sleep(0.6) # delay each "frame" (also avoid giving people headaches with the flashing colours)
+    #time.sleep(0.6) # delay each "frame" (also avoid giving people headaches with the flashing colours)
     
     # get input values:
     i1, i2, i3, i4 = detectTarget()
@@ -135,6 +135,10 @@ for iter in range(100):
     # adjust position:  (move the "muscles" of the "organism")
     x += o1*speed
     y += o2*speed
+    
+    # make the target move a little too
+    xT -= 1
+    yT += 1
     
     # draw new "frame" of "animation":
     turtle.clear()
