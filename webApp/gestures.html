@@ -1,0 +1,19 @@
+<html>
+    <style>
+        .pad {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+    
+    <p class="pad" onmousemove="mouseMovingOverPad(event)" onmouseout="clearDetections()"></p>
+    
+    <input type="checkbox" id="learn" onclick="toggleCheckboxText()"></input><label id="yesno"> Learn gesture (off)</label>
+    
+    <p id="coords"></p>
+    
+    <p id="gesture"></p>
+    
+    <script src="gestures.js"></script>
+</html>
