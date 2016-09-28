@@ -138,8 +138,10 @@ function round(num) {
     return Math.round(num * 100) / 100;
 }
 
-function sigmoid(x) {
-    return (1 / (1 + Math.exp(-x)) -0.5)*2; // range from 0 to 1, but "-0.5)*2" because want 0 to give 0
+function sigmoid(x) { // to keep number range within 0 to 1
+    return (1 / (1 + Math.exp(-x*6)) -0.5)*2;
+    // "-0.5)*2" because want input=0 to give output=0
+    // "-x*6" because want to compress plot to have input ranging from 0 to 1 (and not 0 to 6)
 }
 
 function detectGesture() {
