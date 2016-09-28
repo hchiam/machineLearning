@@ -171,6 +171,7 @@ function detectGesture(event) {
     outputValue = outputValue*100; // get percentage
     // debug output
     document.getElementById("confidence").innerHTML = "confidence="+outputValue+"%";
+    document.getElementById("meter").value = outputValue/100;
     if (outputValue > 80) {
         gesture = "DETECTED!";
     } else {
