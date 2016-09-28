@@ -34,7 +34,7 @@ function toggleLearn() {
 function learnGesture(learn, event) {
     if (learn == true) {
         // goes here:  show ML algorithm an example gesture
-        sampleTimer = setInterval(getSamples(event), 200);
+        sampleTimer = setInterval(getSamples(event), 1000/10); // 10 per second
     }
 }
 
@@ -53,7 +53,11 @@ function showGesture(gesture) {
     document.getElementById("gesture").innerHTML = "Gesture: " + gesture + "?";
 }
 
-// other functions based on other non-synchronous actions:
+/*
+ /*
+ /* other functions based on other non-synchronous actions:
+ /*
+ */
 
 function toggleCheckboxText() {
     if (document.getElementById("learn").checked == true) {
@@ -65,6 +69,7 @@ function toggleCheckboxText() {
 
 function clearDetections() { // "end" with this function
     document.getElementById("coords").innerHTML = "";
-    document.getElementById("gesture").innerHTML = "";
-    document.getElementById("learn").checked = false; // auto stop learning when mouse leaves pad
+    //document.getElementById("gesture").innerHTML = "";
+    document.getElementById("learn").checked = false; // auto stop learning when mouse leaves "pad"
+    toggleCheckboxText(); // make checkbox text match checkbox state
 }
