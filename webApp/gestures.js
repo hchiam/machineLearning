@@ -3,7 +3,32 @@ var padWidth = 100;
 var padHeight = 100;
 var shiftx = -9;
 var shifty = -9;
-var neuralNet = create3DMatrix(50,3,3);
+var snapshots = 50;
+var rows = 3;
+var columns = 3;
+var neuralNet = create3DMatrix(snapshots,rows,columns);
+var xNN = columns;
+var yNN = rows;
+var zNN = snapshots;
+var numOfWts = xNN * yNN * zNN;
+var wts = new Array(numOfWts).fill(0);
+
+function create3DMatrix(snapshots,rows,columns) {
+    var x = snapshots;
+    var y = rows;
+    var z = columns;
+    var matrix = new Array(x);
+    for (i = 0; i < x; i++) {
+        matrix[i] = new Array(y);
+        for (j = 0; j < y; j++) {
+            matrix[i][j] = new Array(z);
+            for(k = 0; k < z; k++) {
+                matrix[i][j][k] = 0;
+            }
+        }
+    }
+    return matrix;
+}
 
 function mouseMovingOverPad(event) { // I'd recommend you read the code starting from here
     showCoords(event);
@@ -38,13 +63,13 @@ function toggleLearn() {
 
 function learnGesture(learn, event) {
     if (learn == true) {
-        sampleTimer = setInterval(updateNeuralNetwork(event), 1000*2); // 10 per second = 1000/10 ; 1 per 2 seconds = 1000*2
+        sampleTimer = setInterval(updateNeuralNetwork(event), 1000*2); // 1 per 2 seconds = 1000*2 ; 10 per second = 1000/10
     }
 }
 
 function updateNeuralNetwork(event) {
     shiftSamples(event); // show ML algorithm an example gesture
-    setWeights(event); // have ML algorithm set neuron synapse weights
+    updateSynapsesWeights(); // have ML algorithm set neuron synapse weights
 }
 
 function shiftSamples(event) {
@@ -56,23 +81,6 @@ function shiftSamples(event) {
     neuralNet[0] = inputSectionMatrix; // example:  [[0,0,0],[0,0,0],[1,0,0]]
     // debug output:
     document.getElementById("section").innerHTML = neuralNet;
-}
-
-function create3DMatrix(snapshots,rows,columns) {
-    var x = snapshots;
-    var y = rows;
-    var z = columns;
-    var matrix = new Array(x);
-    for (i = 0; i < x; i++) {
-        matrix[i] = new Array(y);
-        for (j = 0; j < y; j++) {
-            matrix[i][j] = new Array(z);
-            for(k = 0; k < z; k++) {
-                matrix[i][j][k] = 0;
-            }
-        }
-    }
-    return matrix;
 }
 
 function getPadSection(event) {
@@ -108,9 +116,30 @@ function getPadSection(event) {
     return sectionMatrix;
 }
 
-function setWeights() {
-    
-    
+function updateSynapsesWeights() {
+    // numOfWts = number of weights, already defined at top
+    // wts = matrix of weights, already defined at top
+    var x = zNN;
+    var y = yNN;
+    var z = xNN;
+    var sensitivity = 0.1;
+    for (i = 0; i < x; i++) {
+        wts[i] += neuralNet[i] * sensitivity;
+        //wts[i] = sigmoid( wts[i] );
+        for (j = 0; j < y; j++) {
+            wts[i+j] += neuralNet[i][j] * sensitivity;
+            //wts[i+j] = sigmoid( wts[i+j] );
+            for(k = 0; k < z; k++) {
+                wts[i+j+k] += neuralNet[i][j][k] * sensitivity;
+                //wts[i+j+k] = sigmoid( wts[i+j+k] );
+            }
+        }
+    }
+    document.getElementById("wts").innerHTML = ['wts='+wts];
+}
+
+function sigmoid(x) {
+    return (1 / (1 + Math.exp(-x))); // range from 0 to 1
 }
 
 function detectGesture() {
