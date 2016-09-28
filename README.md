@@ -21,9 +21,11 @@ You can have it even simpler and just run code in your browser without installin
 
 # machine learning web app:
 
+![webApp](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture.png "a web app that tries to detect a gesture when the mouse runs over the 'pad'")
+
 Under ["webApp"](https://github.com/hchiam/machineLearning/blob/master/webApp/gestures.html) folder:
 * `gestures.html`:  the "structure" of the presentation of the web page.
-* `gestures.js`:  the "brains" of the web page.
+* `gestures.js`:  the "brains" of the web page.  Tries to detect a mouse gesture when the mouse runs over the "pad".
 
 # Extra installation required but still pretty simple:
 
