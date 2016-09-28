@@ -131,15 +131,15 @@ function updateSynapsesWeights() {
         for (j = 0; j < y; j++) {
             for(k = 0; k < z; k++) {
                 wts[i][j][k] += neuralNet[i][j][k] * sensitivity;
-                wts[i][j][k] = round( sigmoid( wts[i][j][k] ) );
+                wts[i][j][k] = round( sigmoid( wts[i][j][k] ), 2 );
             }
         }
     }
     document.getElementById("wts").innerHTML = ['wts='+wts];
 }
 
-function round(num) {
-    return Math.round(num * 100) / 100;
+function round(x,digits) {
+    return Math.round(x * Math.pow(10,digits)) / Math.pow(10,digits);
 }
 
 function sigmoid(x) { // to keep number range within 0 to 1
@@ -160,17 +160,21 @@ function detectGesture(event) {
     for (i = 0; i < x; i++) {
         for (j = 0; j < y; j++) {
             for(k = 0; k < z; k++) {
-                outputValue += wts[i][j][k] * testInputMatrix[i][j][k];
-                outputValue = round( sigmoid( outputValue ) );
+                weight = wts[i][j][k]
+                input = testInputMatrix[i][j][k]
+                outputValue += weight * input /snapshots; // "/snapshots" to divide by the number of matching snapshots
             }
         }
     }
+    // get final, rounded percent output value
+    outputValue = round(outputValue,2); // round to 2 decimal places
+    outputValue = outputValue*100; // get percentage
     // debug output
-    document.getElementById("confidence").innerHTML = "confidence"+outputValue;
-    if (outputValue > 0.8) {
-        gesture = "Gesture A";
+    document.getElementById("confidence").innerHTML = "confidence="+outputValue+"%";
+    if (outputValue > 80) {
+        gesture = "DETECTED!";
     } else {
-        gesture = "";
+        gesture = "?";
     }
     return gesture;
 }
@@ -180,7 +184,7 @@ function trackGesture(event) {
 }
 
 function showGesture(gesture) {
-    document.getElementById("gesture").innerHTML = "Gesture: " + gesture + "?";
+    document.getElementById("gesture").innerHTML = "Gesture:  " + gesture;
 }
 
 /*
