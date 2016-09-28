@@ -27,6 +27,8 @@ Under ["webApp"](https://github.com/hchiam/machineLearning/blob/master/webApp) f
 * `gestures.html`:  the "structure" of the presentation of the web page.
 * `gestures.js`:  the "brains" of the web page.  Tries to detect a mouse gesture when the mouse runs over the "pad".
 
+You can try out the web app and see my sample code here: [https://codepen.io/hchiam/pen/rrwQRa](https://codepen.io/hchiam/pen/rrwQRa).
+
 # Extra installation required but still pretty simple:
 
 * `neuralNet_iamtrask.py`:  "11 lines of code" for a 2-layer neural net code from [http://iamtrask.github.io/2015/07/12/basic-python-network](http://iamtrask.github.io/2015/07/12/basic-python-network).  Requires NumPy installed to run.
