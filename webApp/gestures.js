@@ -3,7 +3,7 @@ var padWidth = 100;
 var padHeight = 100;
 var shiftx = -9;
 var shifty = -9;
-var snapshots = 50;
+var snapshots = 3;
 var rows = 3;
 var columns = 3;
 var neuralNet = create3DMatrix(snapshots,rows,columns);
@@ -11,7 +11,7 @@ var xNN = columns;
 var yNN = rows;
 var zNN = snapshots;
 var numOfWts = xNN * yNN * zNN;
-var wts = new Array(numOfWts).fill(0);
+var wts = create3DMatrix(snapshots,rows,columns); // so guarantee same size
 
 function create3DMatrix(snapshots,rows,columns) {
     var x = snapshots;
@@ -124,22 +124,22 @@ function updateSynapsesWeights() {
     var z = xNN;
     var sensitivity = 0.1;
     for (i = 0; i < x; i++) {
-        wts[i] += neuralNet[i] * sensitivity;
-        //wts[i] = sigmoid( wts[i] );
         for (j = 0; j < y; j++) {
-            wts[i+j] += neuralNet[i][j] * sensitivity;
-            //wts[i+j] = sigmoid( wts[i+j] );
             for(k = 0; k < z; k++) {
-                wts[i+j+k] += neuralNet[i][j][k] * sensitivity;
-                //wts[i+j+k] = sigmoid( wts[i+j+k] );
+                wts[i][j][k] += neuralNet[i][j][k] * sensitivity;
+                wts[i][j][k] = round( sigmoid( wts[i][j][k] ) );
             }
         }
     }
     document.getElementById("wts").innerHTML = ['wts='+wts];
 }
 
+function round(num) {
+    return Math.round(num * 100) / 100;
+}
+
 function sigmoid(x) {
-    return (1 / (1 + Math.exp(-x))); // range from 0 to 1
+    return (1 / (1 + Math.exp(-x)) -0.5)*2; // range from 0 to 1, but "-0.5)*2" because want 0 to give 0
 }
 
 function detectGesture() {
