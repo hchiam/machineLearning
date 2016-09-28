@@ -19,6 +19,12 @@ You can have it even simpler and just run code in your browser without installin
 
 * `predatorSim1D.py` and `predatorSim2D.py`:  animated simulations of a "predator" learning to move towards a target.  Based on [my turtle code](https://github.com/hchiam/code7/blob/master/problem3.py) and also a mix of my neural nets above:  sensitivity parameter, weightings, inputs, but no hidden layer.  See it run [here](http://hchiam.blogspot.ca/2016/08/machine-learning-basic-simulator.html) or [here](https://trinket.io/python/2aa598ffb6).
 
+# machine learning web app:
+
+Under ["webApp"](https://github.com/hchiam/machineLearning/blob/master/webApp/gestures.html) folder:
+* `gestures.html`:  the "structure" of the presentation of the web page.
+* `gestures.js`:  the "brains" of the web page.
+
 # Extra installation required but still pretty simple:
 
 * `neuralNet_iamtrask.py`:  "11 lines of code" for a 2-layer neural net code from [http://iamtrask.github.io/2015/07/12/basic-python-network](http://iamtrask.github.io/2015/07/12/basic-python-network).  Requires NumPy installed to run.
