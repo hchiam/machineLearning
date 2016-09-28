@@ -4,3 +4,5 @@
 * `gestures.js`:  the "brains" of the web page. Tries to detect a mouse gesture when the mouse runs over the "pad".
 
 ![webApp](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture.png "a web app that tries to detect a gesture when the mouse runs over the 'pad'")
+
+You can try out the web app and see my sample code here: [https://codepen.io/hchiam/pen/rrwQRa](https://codepen.io/hchiam/pen/rrwQRa).
