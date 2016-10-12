@@ -43,3 +43,7 @@ The next few code samples are based on "Machine Learning Recipes with Josh Gordo
 * `googleExample3.py`:  a higher-level take on the decision tree classifier in `googleExample2.py`.  Requires scikit-learn installed to run.
 
 * `googleExample4.py`:  building your our classifier.  `randomGuessClassifier()` and `KNearestNeighbours_barebones()`.
+
+## Sirajology challenges:
+
+1. [https://github.com/hchiam/gender_classification_challenge](https://github.com/hchiam/gender_classification_challenge)
