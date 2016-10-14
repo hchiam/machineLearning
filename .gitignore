@@ -1,2 +1,2 @@
+# Ignore Mac DS_Store files
 .DS_Store
-old_autoencoder.py
