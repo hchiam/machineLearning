@@ -1,26 +1,43 @@
+<!DOCTYPE html>
 <html>
-    <style>
-        #pad {
-            width: 100px;
-            height: 100px;
-            border: 1px solid black;
-        }
-    </style>
-    
-    <p id="pad" onmousemove="mouseMovingOverPad(event)" onmouseout="clearDetections()"></p>
-    
-    <input type="checkbox" id="learn" onclick="toggleCheckboxText()"></input><label id="yesno"> Learn gesture (off)</label>
-    
-    <p id="coords"></p>
-    
-    <p id="gesture"></p>
-    <meter id="meter" value="0"></meter>
-    <p id="confidence"></p>
-    
-    <p id="section"></p>
-    <p id="s"></p>
-    <p id="wts"></p>
-    <p id="test"></p>
-    
-    <script src="gestures.js"></script>
+    <head>
+        <script src="jquery-3.1.1.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="gestures.css">
+    </head>
+    <body>
+        <div class="container-fluid well pad text-center center">
+            <style>
+                #pad {
+                    width: 100px;
+                    height: 100px;
+                    border: 1px solid black;
+                    margin: auto;
+                }
+            </style>
+            <p>Visit <a href="https://github.com/hchiam/machineLearning/tree/master/webApp">github.com/hchiam</a> for the original, most up-to-date code.</p>
+            <p id="pad" onmousemove="mouseMovingOverPad(event)" onmouseout="clearDetections()"></p>
+            
+            <input type="checkbox" id="learn" onclick="toggleCheckboxText()"></input><label id="yesno"> Learn gesture (off)</label>
+            
+            <p id="coords"></p>
+            
+            <p id="gesture"></p>
+            <meter id="meter" value="0"></meter>
+            <p id="confidence"></p>
+            
+            <p id="section"></p>
+            <p id="s"></p>
+            <p id="wts"></p>
+            <p id="test"></p>
+        
+          <br/>
+          <p id="attrib">[Attribution goes here.]</p>
+            
+          <script src="gestures.js"></script>
+          <script>
+            document.getElementById("attrib").innerHTML = "Written and coded by <a href='http://codepen.io/hchiam'>hchiam</a>";
+          </script>
+        </div>
+    </body>
 </html>

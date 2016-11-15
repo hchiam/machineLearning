@@ -34,9 +34,9 @@ function create3DMatrix(snapshots,rows,columns) {
 function mouseMovingOverPad(event) { // I'd recommend you read the code starting from here
     showCoords(event);
     var learn = toggleLearn();
-    if (learn == true) {
+    if (learn === true) {
         learnGesture(event);
-    } else if (learn == false) {
+    } else if (learn === false) {
         // stop learning
         clearTimeout(sampleTimer);
         updateSynapsesWeights(); // have ML algorithm set neuron synapse weights
@@ -61,7 +61,7 @@ function getCoords(event) {
 
 function toggleLearn() {
     var learn = false;
-    if (document.getElementById("learn").checked == true) {
+    if (document.getElementById("learn").checked === true) {
         learn = true;
     }
     return learn;
@@ -160,8 +160,8 @@ function detectGesture(event) {
     for (i = 0; i < x; i++) {
         for (j = 0; j < y; j++) {
             for(k = 0; k < z; k++) {
-                weight = wts[i][j][k]
-                input = testInputMatrix[i][j][k]
+                weight = wts[i][j][k];
+                input = testInputMatrix[i][j][k];
                 outputValue += weight * input /snapshots; // "/snapshots" to divide by the number of matching snapshots
             }
         }
@@ -195,7 +195,7 @@ function showGesture(gesture) {
  */
 
 function toggleCheckboxText() {
-    if (document.getElementById("learn").checked == true) {
+    if (document.getElementById("learn").checked === true) {
         document.getElementById("yesno").innerHTML = " Learn gesture (ON)";
     } else {
         document.getElementById("yesno").innerHTML = " Learn gesture (off)";
@@ -208,3 +208,7 @@ function clearDetections() { // "end" with this function
     document.getElementById("learn").checked = false; // auto stop learning when mouse leaves "pad"
     toggleCheckboxText(); // make checkbox text match checkbox state
 }
+
+$(document).ready(function() {
+	document.getElementById("attrib").innerHTML = "Written and coded by <a href='http://codepen.io/hchiam'>hchiam</a>";
+});
