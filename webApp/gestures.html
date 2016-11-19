@@ -5,19 +5,20 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="gestures.css">
     </head>
-    <body>
+    <body onmouseover="mouseMovingOverPad(event);">
         <div class="container-fluid well pad">
             <style>
-                #pad {
+                /*#pad {
                     width: 100px;
                     height: 100px;
                     border: 1px solid black;
-                }
+                }*/
             </style>
             <p>Visit <a href="https://github.com/hchiam/machineLearning/tree/master/webApp">github.com/hchiam</a> for the original, most up-to-date code.</p>
-            <p id="pad" onmousemove="mouseMovingOverPad(event)" onmouseout="clearDetections()"></p>
+            <p id="pad"><!--onmousemove="mouseMovingOverPad(event);" onmouseout="clearDetections();"--></p>
             
-            <input type="checkbox" id="learn" onclick="toggleCheckboxText()"></input><label id="yesno"> Learn gesture (off)</label>
+            <!--autofocus makes it have the focus on it when you see the page loaded-->
+            <input autofocus type="checkbox" id="learn" onclick="toggleCheckboxText();"></input><label id="yesno"> Learn gesture (off)</label>
             
             <p id="coords"></p>
             

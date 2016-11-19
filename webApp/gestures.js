@@ -1,6 +1,8 @@
+document.addEventListener("mousemove", mouseMovingOverPad); // detect mouse position anywhere on page
+
 var sampleTimer;
-var padWidth = 100;
-var padHeight = 100;
+var padWidth = window.innerWidth;
+var padHeight = window.innerHeight;
 var shiftx = -9;
 var shifty = -9;
 var snapshots = 50;
