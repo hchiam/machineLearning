@@ -1,4 +1,4 @@
-document.addEventListener("mousemove", mouseMovingOverPad); // detect mouse position anywhere on page
+document.addEventListener("mousemove", mouseMoving); // detect mouse position anywhere on page
 
 var sampleTimer;
 var padWidth = window.innerWidth;
@@ -33,7 +33,7 @@ function create3DMatrix(snapshots,rows,columns) {
     return matrix;
 }
 
-function mouseMovingOverPad(event) { // I'd recommend you read the code starting from here
+function mouseMoving(event) { // I'd recommend you read the code starting from here
     showCoords(event);
     var learn = toggleLearn();
     if (learn === true) {
@@ -198,16 +198,18 @@ function showGesture(gesture) {
 
 function toggleCheckboxText() {
     if (document.getElementById("learn").checked === true) {
-        document.getElementById("yesno").innerHTML = " Learn gesture (ON)";
+        document.getElementById("yesno").innerHTML = "LEARNING gesture (press spacebar to stop)";
+        document.getElementById("pad").style.backgroundColor = "green";
     } else {
-        document.getElementById("yesno").innerHTML = " Learn gesture (off)";
+        document.getElementById("yesno").innerHTML = "NOT learning gesture (press spacebar to start)";
+        document.getElementById("pad").style.backgroundColor = "red";
     }
 }
 
 function clearDetections() { // "end" with this function
     document.getElementById("coords").innerHTML = "";
     //document.getElementById("gesture").innerHTML = "";
-    document.getElementById("learn").checked = false; // auto stop learning when mouse leaves "pad"
+    document.getElementById("learn").checked = false; // auto stop learning when mouse leaves detection area
     toggleCheckboxText(); // make checkbox text match checkbox state
 }
 
