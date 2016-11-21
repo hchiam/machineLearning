@@ -6,8 +6,8 @@ var padHeight = window.innerHeight;
 var shiftx = -9;
 var shifty = -9;
 var snapshots = 50;
-var rows = 3;
-var columns = 3;
+var rows = 5;
+var columns = 5;
 var neuralNet = create3DMatrix(snapshots,rows,columns);
 var xNN = columns;
 var yNN = rows;
@@ -28,6 +28,20 @@ function create3DMatrix(snapshots,rows,columns) {
             for(k = 0; k < z; k++) {
                 matrix[i][j][k] = 0;
             }
+        }
+    }
+    return matrix;
+}
+
+function create2DMatrix(rows,columns) {
+    var y = rows;
+    var z = columns;
+    var a = "";
+    var matrix = new Array(y);
+    for (j = 0; j < y; j++) {
+        matrix[j] = new Array(z);
+        for(k = 0; k < z; k++) {
+            matrix[j][k] = 0;
         }
     }
     return matrix;
@@ -90,11 +104,7 @@ function shiftSamples(event, matrix) {
 }
 
 function getPadSection(event) {
-    var sectionMatrix = [
-                   [0,0,0],
-                   [0,0,0],
-                   [0,0,0]
-                   ];
+    var sectionMatrix = create2DMatrix(rows,columns);
     var sectionx, sectiony;
     var coords = getCoords(event); // [x,y]
     var x = coords[0];
