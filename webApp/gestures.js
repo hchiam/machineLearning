@@ -1,3 +1,5 @@
+// I'd recommend you read the code starting from "function mouseMoving(event)" to get the main idea
+
 document.addEventListener("mousemove", mouseMoving); // detect mouse position anywhere on page
 
 var sampleTimer;
