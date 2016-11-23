@@ -11,19 +11,19 @@ Instead of running the html file locally, you can try out the web app live here:
 
 #Main Data Flow Steps:
 
-1) gestures.html
+* gestures.html
 
-    2) onmouseover="mouseMoving(event);"
+    1) onmouseover="mouseMoving(event);"
 
-3) gestures.js
+* gestures.js
 
-    4) mouseMoving(event)
+    2) mouseMoving(event)
 
-    5) learnGesture(event)
+    3) learnGesture(event)
 
-    6) updateSynapsesWeights()
+    4) updateSynapsesWeights()
 
-    7) detectGesture(event)
+    5) detectGesture(event)
 
 #Example Gesture:
 
