@@ -118,6 +118,7 @@ function shiftSamples(event, matrix) {
     document.getElementById("section").innerHTML = matrix;
 }
 
+// TODO: in future, could add fine-tuned position detection to the velocity data to get more sophisticated
 function getPadSection(event) {
     var sectionMatrix = create2DMatrix(3,3);
     var sectionx, sectiony;
