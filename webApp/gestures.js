@@ -173,13 +173,14 @@ function getVelocityDirection(event) {
     var dx = vector[0];
     var dy = vector[1];
     var slope = dy/dx;
-    var thresholdMovementSize = 2;
+    var thresholdMovementSize = 10;
     // get which section of the matrix to set to 1
     if (Math.abs(dx) < thresholdMovementSize || Math.abs(dy) < thresholdMovementSize) {
         directionx = 1;
         directiony = 1;
         directionMatrix[directionx][directiony] = 0;
     } else {
+        document.getElementById("checkSamplePeriod").innerHTML = parseInt(document.getElementById("checkSamplePeriod").innerHTML) + 1;
         if (dx < 0) {
             if (dy < 0) {
                 if (slope > 2.414) {
