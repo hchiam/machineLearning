@@ -9,6 +9,11 @@ Instead of running the html file locally, you can try out the web app live here:
 
 ![webApp](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture.png "a web app that tries to detect a gesture when the mouse runs over the 'pad'")
 
+#Example Potential Use:
+
+* For future mobile web apps/games using mouse path gestures.
+* For interaction capabilities in web apps.
+
 #Main Data Flow Steps:
 
 * gestures.html
