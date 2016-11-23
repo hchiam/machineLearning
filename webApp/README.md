@@ -29,7 +29,9 @@ For gestures.js, with "confidence > 90, movement dx and dy both > 5 then 0 detec
 
 ``
 var confidenceThreshold = 90;
+
 var thresholdMovementSize = 5;
+
 if (Math.abs(dx) < thresholdMovementSize && Math.abs(dy) < thresholdMovementSize) {
     directionMatrix[directionx][directiony] = 0;
 }
