@@ -2,12 +2,13 @@
 
 document.addEventListener("mousemove", mouseMoving); // detect mouse position anywhere on page
 
+var samplePeriod = 1000*5; // 1 per 2 seconds if samplePeriod = 1000*2 ; 10 per second if samplePeriod = 1000/10
 var sampleTimer;
 var padWidth = window.innerWidth;
 var padHeight = window.innerHeight;
 var shiftx = -9;
 var shifty = -9;
-var snapshots = 20;
+var snapshots = 50;
 var rows = 3;
 var columns = 3;
 var neuralNet = create3DMatrix(snapshots,rows,columns);
@@ -116,7 +117,7 @@ function toggleLearn() {
 }
 
 function learnGesture(event) {
-    sampleTimer = setInterval(updateNeuralNetwork(event, neuralNet), 1000*2); // 1 per 2 seconds = 1000*2 ; 10 per second = 1000/10
+    sampleTimer = setInterval(updateNeuralNetwork(event, neuralNet), samplePeriod); // 1 per 2 seconds if samplePeriod = 1000*2 ; 10 per second if samplePeriod = 1000/10
 }
 
 function updateNeuralNetwork(event, matrix) {
@@ -321,7 +322,7 @@ function detectGesture(event) {
 }
 
 function trackGesture(event) {
-    sampleTimer = setInterval(updateNeuralNetwork(event, testInputMatrix), 1000*2); // 1 per 2 seconds = 1000*2 ; 10 per second = 1000/10
+    sampleTimer = setInterval(updateNeuralNetwork(event, testInputMatrix), samplePeriod); // 1 per 2 seconds if samplePeriod = 1000*2 ; 10 per second if samplePeriod = 1000/10
 }
 
 function showGesture(gesture) {
