@@ -2,7 +2,7 @@
 
 document.addEventListener("mousemove", mouseMoving); // detect mouse position anywhere on page
 
-var samplePeriod = 1000*5; // 1 per 2 seconds if samplePeriod = 1000*2 ; 10 per second if samplePeriod = 1000/10
+var samplePeriod = 1000*2; // 1 per 2 seconds if samplePeriod = 1000*2 ; 10 per second if samplePeriod = 1000/10
 var sampleTimer;
 var padWidth = window.innerWidth;
 var padHeight = window.innerHeight;
@@ -173,76 +173,147 @@ function getVelocityDirection(event) {
     var dx = vector[0];
     var dy = vector[1];
     var slope = dy/dx;
-    // get section's x coordinate
-    if (dx < 0) {
-        if (slope > 2.414) {
-            directionx = 1;
-            directiony = 0;
-        } else if (slope <= 2.414 && slope > 0.414) {
-            directionx = 0;
-            directiony = 0;
-        } else if (slope <= 0.414 && slope > -0.414) {
-            directionx = 0;
-            directiony = 1;
-        } else if (slope <= -0.414 && slope > -2.414) {
-            directionx = 0;
-            directiony = 2;
-        } else if (slope <= -2.414) {
-            directionx = 1;
-            directiony = 2;
-        }
-    } else if (dx === 0) {
-        if (slope >= 2.414 || slope <= -2.414) {
-            if (dy > 0) {
-                directionx = 1;
-                directiony = 2;
+    var thresholdMovementSize = 2;
+    // get which section of the matrix to set to 1
+    if (Math.abs(dx) < thresholdMovementSize || Math.abs(dy) < thresholdMovementSize) {
+        directionx = 1;
+        directiony = 1;
+        directionMatrix[directionx][directiony] = 0;
+    } else {
+        if (dx < 0) {
+            if (dy < 0) {
+                if (slope > 2.414) {
+                    directionx = 1;
+                    directiony = 0;
+                } else if (slope <= 2.414 && slope > 0.414) {
+                    directionx = 0;
+                    directiony = 0;
+                } else if (slope <= 0.414) {
+                    directionx = 0;
+                    directiony = 1;
+                }
             } else if (dy === 0) {
-                directionx = 1;
-                directiony = 1;
-            } else if (dy < 0) {
-                directionx = 1;
-                directiony = 0;
-            }
-        } else if (slope < 2.414) {
-            if (dy > 0) {
-                directionx = 2;
-                directiony = 2;
-            } else if (dy === 0) {
-                directionx = 1;
-                directiony = 1;
-            } else if (dy < 0) {
                 directionx = 0;
-                directiony = 0;
+                directiony = 1;
+            } else if (dy > 0) {
+                if (slope > -0.414) {
+                    directionx = 0;
+                    directiony = 1;
+                } else if (slope <= -0.414 && slope > -2.414) {
+                    directionx = 0;
+                    directiony = 2;
+                } else if (slope <= -2.414) {
+                    directionx = 1;
+                    directiony = 2;
+                }
             }
-        } else if (slope > -2.414) {
-            if (dy > 0) {
-                directionx = 0;
-                directiony = 2;
+            //if (slope > 2.414) {
+            //    directionx = 1;
+            //    directiony = 0;
+            //} else if (slope <= 2.414 && slope > 0.414) {
+            //    directionx = 0;
+            //    directiony = 0;
+            //} else if (slope <= 0.414 && slope > -0.414) {
+            //    directionx = 0;
+            //    directiony = 1;
+            //} else if (slope <= -0.414 && slope > -2.414) {
+            //    directionx = 0;
+            //    directiony = 2;
+            //} else if (slope <= -2.414) {
+            //    directionx = 1;
+            //    directiony = 2;
+            //}
+        } else if (dx === 0) {
+            if (dy < 0) {
+                directionx = 1;
+                directiony = 0;
             } else if (dy === 0) {
                 directionx = 1;
                 directiony = 1;
-            } else if (dy < 0) {
-                directionx = 2;
-                directiony = 0;
+            } else if (dy > 0) {
+                directionx = 1;
+                directiony = 2;
             }
+            //if (slope >= 2.414 || slope <= -2.414) {
+            //    if (dy > 0) {
+            //        directionx = 1;
+            //        directiony = 2;
+            //    } else if (dy === 0) {
+            //        directionx = 1;
+            //        directiony = 1;
+            //    } else if (dy < 0) {
+            //        directionx = 1;
+            //        directiony = 0;
+            //    }
+            //} else if (slope < 2.414) {
+            //    if (dy > 0) {
+            //        directionx = 2;
+            //        directiony = 2;
+            //    } else if (dy === 0) {
+            //        directionx = 1;
+            //        directiony = 1;
+            //    } else if (dy < 0) {
+            //        directionx = 0;
+            //        directiony = 0;
+            //    }
+            //} else if (slope > -2.414) {
+            //    if (dy > 0) {
+            //        directionx = 0;
+            //        directiony = 2;
+            //    } else if (dy === 0) {
+            //        directionx = 1;
+            //        directiony = 1;
+            //    } else if (dy < 0) {
+            //        directionx = 2;
+            //        directiony = 0;
+            //    }
+            //}
+        } else if (dx > 0) {
+            if (dy > 0) {
+                if (slope > 2.414) {
+                    directionx = 1;
+                    directiony = 2;
+                } else if (slope <= 2.414 && slope > 0.414) {
+                    directionx = 2;
+                    directiony = 2;
+                } else if (slope <= 0.414) {
+                    directionx = 2;
+                    directiony = 1;
+                }
+            } else if (dy === 0) {
+                directionx = 2;
+                directiony = 1;
+            } else if (dy < 0) {
+                if (slope > -0.414) {
+                    directionx = 2;
+                    directiony = 1;
+                } else if (slope <= -0.414 && slope > -2.414) {
+                    directionx = 2;
+                    directiony = 0;
+                } else if (slope <= -2.414) {
+                    directionx = 1;
+                    directiony = 0;
+                }
+            }
+            //if (slope > 2.414) {
+            //    directionx = 1;
+            //    directiony = 2;
+            //} else if (slope <= 2.414 && slope > 0.414) {
+            //    directionx = 0;
+            //    directiony = 2;
+            //} else if (slope <= 0.414 && slope > -0.414) {
+            //    directionx = 0;
+            //    directiony = 1;
+            //} else if (slope <= -0.414 && slope > -2.414) {
+            //    directionx = 0;
+            //    directiony = 0;
+            //} else if (slope <= -2.414) {
+            //    directionx = 1;
+            //    directiony = 0;
+            //}
         }
-    } else if (dx > 0) {
-        if (slope > 2.414) {
-            directionx = 1;
-            directiony = 2;
-        } else if (slope <= 2.414 && slope > 0.414) {
-            directionx = 0;
-            directiony = 2;
-        } else if (slope <= 0.414 && slope > -0.414) {
-            directionx = 0;
-            directiony = 1;
-        } else if (slope <= -0.414 && slope > -2.414) {
-            directionx = 0;
-            directiony = 0;
-        } else if (slope <= -2.414) {
-            directionx = 1;
-            directiony = 0;
-        }
+        // detect the section of the matrix to set to 1
+        directionMatrix[directionx][directiony] = 1;
     }
     //// get section's y coordinate
     //if (dy < 0) {
@@ -252,8 +323,8 @@ function getVelocityDirection(event) {
     //} else if (dy > 0) {
     //    directiony = 2;
     //}
-    // detect the section of the pad
-    directionMatrix[directionx][directiony] = 1;
+    // detect the section of the matrix to set to 1
+    // directionMatrix[directionx][directiony] = 1;
     // debug output:
     document.getElementById("s").innerHTML = ['section=['+directionx+','+directiony+'] matrix='+directionMatrix+' vector=('+dx+','+dy+')'];
     return directionMatrix;
