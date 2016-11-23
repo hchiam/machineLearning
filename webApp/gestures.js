@@ -7,9 +7,9 @@ var padWidth = window.innerWidth;
 var padHeight = window.innerHeight;
 var shiftx = -9;
 var shifty = -9;
-var snapshots = 50;
-var rows = 5;
-var columns = 5;
+var snapshots = 20;
+var rows = 3;
+var columns = 3;
 var neuralNet = create3DMatrix(snapshots,rows,columns);
 var xNN = columns;
 var yNN = rows;
@@ -50,7 +50,7 @@ function create2DMatrix(rows,columns) {
 }
 
 function mouseMoving(event) { // I'd recommend you read the code starting from here
-    showCoords(event);
+    showDirectionVector(event); // showCoords(event);
     var learn = toggleLearn();
     if (learn === true) {
         learnGesture(event);
@@ -77,6 +77,19 @@ function getCoords(event) {
     return [x,y];
 }
 
+function showDirectionVector(event) {
+    var x = getDirectionVector(event)[0];
+    var y = getDirectionVector(event)[1];
+    var vector = "(" + x + "," + y + ")";
+    document.getElementById("coords").innerHTML = vector;
+}
+
+function getDirectionVector(event) {
+    var x = event.movementX;
+    var y = event.movementY;
+    return [x,y];
+}
+
 function toggleLearn() {
     var learn = false;
     if (document.getElementById("learn").checked === true) {
@@ -95,7 +108,7 @@ function updateNeuralNetwork(event, matrix) {
 }
 
 function shiftSamples(event, matrix) {
-    var inputSectionMatrix = getPadSection(event);
+    var inputSectionMatrix = getVelocityDirection(event); // getPadSection(event);
     var numberOfSnapshots = matrix.length;
     for (i = numberOfSnapshots-1; i > 0; i--) {
         matrix[i] = matrix[i-1];
@@ -106,7 +119,7 @@ function shiftSamples(event, matrix) {
 }
 
 function getPadSection(event) {
-    var sectionMatrix = create2DMatrix(rows,columns);
+    var sectionMatrix = create2DMatrix(3,3);
     var sectionx, sectiony;
     var coords = getCoords(event); // [x,y]
     var x = coords[0];
@@ -132,6 +145,99 @@ function getPadSection(event) {
     // debug output:
     document.getElementById("s").innerHTML = ['section=['+sectionx+','+sectiony+'] matrix='+sectionMatrix+' coords=('+x+','+y+')'];
     return sectionMatrix;
+}
+
+function getVelocityDirection(event) {
+    var directionMatrix = create2DMatrix(3,3);
+    var directionx, directiony;
+    var vector = getDirectionVector(event); // [x,y]
+    var dx = vector[0];
+    var dy = vector[1];
+    var slope = dy/dx;
+    // get section's x coordinate
+    if (dx < 0) {
+        if (slope > 2.414) {
+            directionx = 1;
+            directiony = 0;
+        } else if (slope <= 2.414 && slope > 0.414) {
+            directionx = 0;
+            directiony = 0;
+        } else if (slope <= 0.414 && slope > -0.414) {
+            directionx = 0;
+            directiony = 1;
+        } else if (slope <= -0.414 && slope > -2.414) {
+            directionx = 0;
+            directiony = 2;
+        } else if (slope <= -2.414) {
+            directionx = 1;
+            directiony = 2;
+        }
+    } else if (dx === 0) {
+        if (slope >= 2.414 || slope <= -2.414) {
+            if (dy > 0) {
+                directionx = 1;
+                directiony = 2;
+            } else if (dy === 0) {
+                directionx = 1;
+                directiony = 1;
+            } else if (dy < 0) {
+                directionx = 1;
+                directiony = 0;
+            }
+        } else if (slope < 2.414) {
+            if (dy > 0) {
+                directionx = 2;
+                directiony = 2;
+            } else if (dy === 0) {
+                directionx = 1;
+                directiony = 1;
+            } else if (dy < 0) {
+                directionx = 0;
+                directiony = 0;
+            }
+        } else if (slope > -2.414) {
+            if (dy > 0) {
+                directionx = 0;
+                directiony = 2;
+            } else if (dy === 0) {
+                directionx = 1;
+                directiony = 1;
+            } else if (dy < 0) {
+                directionx = 2;
+                directiony = 0;
+            }
+        }
+    } else if (dx > 0) {
+        if (slope > 2.414) {
+            directionx = 1;
+            directiony = 2;
+        } else if (slope <= 2.414 && slope > 0.414) {
+            directionx = 0;
+            directiony = 2;
+        } else if (slope <= 0.414 && slope > -0.414) {
+            directionx = 0;
+            directiony = 1;
+        } else if (slope <= -0.414 && slope > -2.414) {
+            directionx = 0;
+            directiony = 0;
+        } else if (slope <= -2.414) {
+            directionx = 1;
+            directiony = 0;
+        }
+    }
+    //// get section's y coordinate
+    //if (dy < 0) {
+    //    directiony = 0;
+    //} else if (dy === 0) {
+    //    directiony = 1;
+    //} else if (dy > 0) {
+    //    directiony = 2;
+    //}
+    // detect the section of the pad
+    directionMatrix[directionx][directiony] = 1;
+    // debug output:
+    document.getElementById("s").innerHTML = ['section=['+directionx+','+directiony+'] matrix='+directionMatrix+' vector=('+dx+','+dy+')'];
+    return directionMatrix;
 }
 
 function updateSynapsesWeights() {
@@ -188,8 +294,10 @@ function detectGesture(event) {
     document.getElementById("meter").value = outputValue/100;
     if (outputValue > 80) {
         gesture = "DETECTED!";
+        document.getElementById("pad").style.backgroundColor = "green";
     } else {
         gesture = "?";
+        document.getElementById("pad").style.backgroundColor = "red";
     }
     return gesture;
 }
@@ -211,7 +319,7 @@ function showGesture(gesture) {
 function toggleCheckboxText() {
     if (document.getElementById("learn").checked === true) {
         document.getElementById("yesno").innerHTML = "LEARNING gesture (press spacebar to stop)";
-        document.getElementById("pad").style.backgroundColor = "green";
+        document.getElementById("pad").style.backgroundColor = "blue";
     } else {
         document.getElementById("yesno").innerHTML = "NOT learning gesture (press spacebar to start)";
         document.getElementById("pad").style.backgroundColor = "red";
