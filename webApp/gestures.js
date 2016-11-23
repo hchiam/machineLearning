@@ -10,6 +10,7 @@ var padHeight = window.innerHeight;
 var shiftx = -9;
 var shifty = -9;
 var snapshots = 50;
+var confidenceThreshold = 90;
 var rows = 3;
 var columns = 3;
 var neuralNet = create3DMatrix(snapshots,rows,columns);
@@ -174,9 +175,9 @@ function getVelocityDirection(event) {
     var dx = vector[0];
     var dy = vector[1];
     var slope = dy/dx;
-    var thresholdMovementSize = 0;
+    var thresholdMovementSize = 5;
     // get which section of the matrix to set to 1
-    if (Math.abs(dx) < thresholdMovementSize || Math.abs(dy) < thresholdMovementSize) {
+    if (Math.abs(dx) < thresholdMovementSize && Math.abs(dy) < thresholdMovementSize) {
         directionx = 1;
         directiony = 1;
         directionMatrix[directionx][directiony] = 0;
@@ -308,7 +309,7 @@ function detectGesture(event) {
     // debug output
     document.getElementById("confidence").innerHTML = "confidence="+outputValue+"%";
     document.getElementById("meter").value = outputValue/100;
-    if (outputValue > 80) {
+    if (outputValue > confidenceThreshold) {
         gesture = "DETECTED!";
         document.getElementById("pad").style.backgroundColor = "green";
     } else {
