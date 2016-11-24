@@ -180,7 +180,7 @@ function getVelocityDirection(event) {
     if (Math.abs(dx) < thresholdMovementSize && Math.abs(dy) < thresholdMovementSize) {
         directionx = 1;
         directiony = 1;
-        directionMatrix[directionx][directiony] = 0;
+        directionMatrix[directionx][directiony] = 1;
     } else {
         document.getElementById("checkSamplePeriod").innerHTML = parseInt(document.getElementById("checkSamplePeriod").innerHTML) + 1;
         if (dx < 0) {
