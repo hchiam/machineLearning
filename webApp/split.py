@@ -1,6 +1,6 @@
 # This is a convenient python file
 # to format the NN weights string ("wts" in gestures.js)
-# to be 9 numbers per row (i.e. each matrix per timestamp)
+# to be 9 numbers per row (i.e. each matrix per timestamp, and each matrix has its own 3 rows printed along 1 row),
 # with empty lines between each line.
 
 # copy the wts string from gestures.html (in your browser) and put it between quotation marks here:
@@ -8,10 +8,14 @@ wts="0.86,0.86,0,0.86,0.91,0.86,0,0.86,0,0.91,0.86,0,0,0.86,0,0.86,0,0.86,0.91,0
 
 splitString = wts.split(",")
 
-nthComma = 9
+nthComma = 3
 
-stringSplitByNthComman = [",".join(splitString[i:i+nthComma]) for i in range(0, len(splitString), nthComma)]
+stringSplitByNthComma = [",".join(splitString[i:i+nthComma]) for i in range(0, len(splitString), nthComma)]
 
-for matrix in stringSplitByNthComman:
+nthBracketComma = 3
+
+stringSplitByNthBracketComma = ["],[".join(stringSplitByNthComma[i:i+nthBracketComma]) for i in range(0, len(stringSplitByNthComma), nthBracketComma)]
+
+for matrix in stringSplitByNthBracketComma:
     #print ("")
     print ("[" + matrix + "],")
