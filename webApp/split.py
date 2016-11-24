@@ -14,4 +14,4 @@ stringSplitByNthComman = [",".join(splitString[i:i+nthComma]) for i in range(0, 
 
 for matrix in stringSplitByNthComman:
     #print ("")
-    print (matrix)
+    print ("[" + matrix + "],")
