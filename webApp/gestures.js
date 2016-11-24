@@ -10,7 +10,7 @@ var padHeight = window.innerHeight;
 var shiftx = -9;
 var shifty = -9;
 var snapshots = 50;
-var confidenceThreshold = 90;
+var confidenceThreshold = 80;
 var rows = 3;
 var columns = 3;
 var neuralNet = create3DMatrix(snapshots,rows,columns);
@@ -291,7 +291,7 @@ function sigmoid(x) { // to keep number range within 0 to 1
     // 0 to 1
     //return 1 / (1 + Math.exp(-x*10+5));
     // -1 to 1
-    return (1 / (1 + Math.exp(-x*6)) -0.5)*2;
+    return (1 / (1 + Math.exp(-x*3)) -0.5)*2; // "-x*3" instead of "-x*6" so wts can be decimal values (not so quick to get to 1)
     // "-0.5)*2" because want input=0 to give output=0
     // "-x*6" because want to compress plot to have input ranging from 0 to 1 (and not 0 to 6)
 }
