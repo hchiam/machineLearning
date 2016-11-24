@@ -1,5 +1,6 @@
 # Machine Learning Web App:
 
+Main files:
 * `gestures.html`:  the "structure" of the presentation of the web page.
 * `gestures.js`:  the "brains" of the web page. Tries to detect a mouse gesture when the mouse runs over the "pad".
 * `gestures.css`:  the "looks/styling" of the presentation of the web page.
