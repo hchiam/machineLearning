@@ -108,23 +108,6 @@ function create2DMatrix(rows,columns) {
     return matrix;
 }
 
-function create2DMatrix_ALTERNATIVE(rows,columns,makeNegativeOrPositiveNoZero=false) {
-    var y = rows;
-    var z = columns;
-    var matrix = new Array(y);
-    var nonPositiveValue = 0;
-    if (makeNegativeOrPositiveNoZero === true) {
-        nonPositiveValue = -1;
-    }
-    for (j = 0; j < y; j++) {
-        matrix[j] = new Array(z);
-        for(k = 0; k < z; k++) {
-            matrix[j][k] = nonPositiveValue;
-        }
-    }
-    return matrix;
-}
-
 function mouseMoving(event) { // I'd recommend you read the code starting from here
     showDirectionVector(event); // showCoords(event);
     var learn = toggleLearn();
