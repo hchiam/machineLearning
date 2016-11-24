@@ -39,14 +39,14 @@ Making two quick clockwise circles with the mouse.  The following synapse weight
 
 For gestures.js, with "confidence > 90, movement dx and dy both > 5 then 0 detection "; commit 8eddc91cbcdf7d5be357abafe91f12a1efb866a9
 
-``
+```
 var snapshots = 50;
 var confidenceThreshold = 90;
 var thresholdMovementSize = 5;
 if (Math.abs(dx) < thresholdMovementSize && Math.abs(dy) < thresholdMovementSize) {
     directionMatrix[directionx][directiony] = 0;
 }
-``
+```
 
 ## Example Synapse Weights for "two quick clockwise circles with the mouse":
 
@@ -60,9 +60,9 @@ wts=
 
 ## ALTERNATE Parameters/Version that worked for "two quick clockwise circles with the mouse":
 
-``
+```
 var confidenceThreshold = 80;
-``
+```
 
 ## ALTERNATE Example Synapse Weights for "two quick clockwise circles with the mouse":
 
