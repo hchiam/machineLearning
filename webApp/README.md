@@ -39,7 +39,7 @@ Instead of running the html file locally, you can try out the web app live here:
 
 Making two quick clockwise circles with the mouse.  The following synapse weights and parameters make this happen.  The neural net can distinguish the motion from simple mouse cursor swipes, and even discriminate clockwise from counterclockise.  Small motions are automatically "filtered out" because of the thresholdMovementSize being > 0.  Training takes a while with confidenceThreshold = 90, but also helps "filter out" most false positives.
 
-## Parameters/Version that worked for "two quick clockwise circles with the mouse":
+## Parameters that worked for "two quick clockwise circles with the mouse":
 
 For gestures.js, with "confidence > 90, movement dx and dy both > 5 then 0 detection "; commit 8eddc91cbcdf7d5be357abafe91f12a1efb866a9
 
@@ -68,15 +68,24 @@ wts =
 
 ![LearnGesture_ExampleWts01.png](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture_ExampleWts01.png )
 
-## ALTERNATE Parameter Change:
+## Parameter CHANGES that make it "ONE quick clockwise circle with the mouse":
 
-For gestures.js, commit 5093f422ea0cffa8f10e80fed0e2a30a60a466f6
+For gestures.js, commit 56c3546fb8a3388a58a2effc6b01c17874404b38
 
 ```
 var confidenceThreshold = 80;
 ```
 
-## ALTERNATE Example Synapse Weights:
+And to not ignore the center of the matrix:
+
+
+```
+directionx = 1;
+directiony = 1;
+directionMatrix[directionx][directiony] = 1;
+```
+
+## Example Synapse Weights for "ONE quick clockwise circle with the mouse":
 
 From this un-formatted string of numbers...
 
