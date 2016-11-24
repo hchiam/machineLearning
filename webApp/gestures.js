@@ -251,6 +251,14 @@ function getVelocityDirection(event) {
         }
         // detect the section of the matrix to set to 1
         directionMatrix[directionx][directiony] = 1;
+        //// make the rest have weights of -1
+        //for (j = 0; j < rows; j++) {
+        //    for(k = 0; k < columns; k++) {
+        //        if (j !== directionx || k !== directiony) {
+        //            directionMatrix[j][k] = -1;
+        //        }
+        //    }
+        //}
     }
     // debug output:
     document.getElementById("s").innerHTML = ['section=['+directionx+','+directiony+'] matrix='+directionMatrix+' vector=('+dx+','+dy+')'];
@@ -280,6 +288,9 @@ function round(x,digits) {
 }
 
 function sigmoid(x) { // to keep number range within 0 to 1
+    // 0 to 1
+    //return 1 / (1 + Math.exp(-x*10+5));
+    // -1 to 1
     return (1 / (1 + Math.exp(-x*6)) -0.5)*2;
     // "-0.5)*2" because want input=0 to give output=0
     // "-x*6" because want to compress plot to have input ranging from 0 to 1 (and not 0 to 6)
@@ -298,7 +309,7 @@ function detectGesture(event) {
         for (j = 0; j < y; j++) {
             for(k = 0; k < z; k++) {
                 weight = wts[i][j][k];
-                input = testInputMatrix[i][j][k];
+                input = Math.abs(testInputMatrix[i][j][k]);
                 outputValue += weight * input /snapshots; // "/snapshots" to divide by the number of matching snapshots
             }
         }
