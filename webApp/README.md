@@ -1,4 +1,4 @@
-#Machine Learning Web App:
+# Machine Learning Web App:
 
 * `gestures.html`:  the "structure" of the presentation of the web page.
 * `gestures.js`:  the "brains" of the web page. Tries to detect a mouse gesture when the mouse runs over the "pad".
@@ -10,12 +10,12 @@ Instead of running the html file locally, you can try out the web app live here:
 
 ![webApp](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture.png "a web app that tries to detect a gesture when the mouse runs over the 'pad'")
 
-#Example Potential Use:
+# Example Potential Use:
 
 * For future mobile web apps/games using mouse path gestures.
 * For interaction capabilities in web apps.
 
-#Main Data Flow Steps:
+# Main Data Flow Steps:
 
 * gestures.html
 
@@ -31,7 +31,7 @@ Instead of running the html file locally, you can try out the web app live here:
 
     5) detectGesture(event)
 
-#Example Gesture:
+# Example Gesture:
 
 Making two quick clockwise circles with the mouse.  The following synapse weights and parameters make this happen.  The neural net can distinguish the motion from simple mouse cursor swipes, and even discriminate clockwise from counterclockise.  Small motions are automatically "filtered out" because of the thresholdMovementSize being > 0.  Training takes a while with confidenceThreshold = 90, but also helps "filter out" most false positives.
 
@@ -39,16 +39,16 @@ Making two quick clockwise circles with the mouse.  The following synapse weight
 
 For gestures.js, with "confidence > 90, movement dx and dy both > 5 then 0 detection "; commit 8eddc91cbcdf7d5be357abafe91f12a1efb866a9
 
-```
+
 var snapshots = 50;
 var confidenceThreshold = 90;
 var thresholdMovementSize = 5;
 if (Math.abs(dx) < thresholdMovementSize && Math.abs(dy) < thresholdMovementSize) {
     directionMatrix[directionx][directiony] = 0;
 }
-```
 
-##Example Synapse Weights for "two quick clockwise circles with the mouse":
+
+## Example Synapse Weights for "two quick clockwise circles with the mouse":
 
 Each "row" below = one timestamp or snapshot.  
 Each "column" below = direction of mouse cursor motion at each timestamp.  
@@ -56,102 +56,18 @@ Notice any patterns?
 
 wts=
 
-1,1,0,1,0,0,1,1,0,
+![LearnGesture_ExampleWts01.png](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture_ExampleWts01.png )
 
-1,1,1,1,0,1,1,1,1,
+## ALTERNATE Parameters/Version that worked for "two quick clockwise circles with the mouse":
 
-1,1,1,1,0,1,1,1,1,
+var confidenceThreshold = 80;
 
-1,1,1,1,0,0,1,1,1,
+## ALTERNATE Example Synapse Weights for "two quick clockwise circles with the mouse":
 
-1,1,1,1,0,1,0,1,1,
+Each "row" below = one timestamp or snapshot.  
+Each "column" below = direction of mouse cursor motion at each timestamp.  
+Notice any patterns?
 
-1,1,1,1,0,0,1,1,1,
+wts=
 
-1,1,1,0,0,1,0,1,1,
-
-1,1,1,1,0,1,0,1,1,
-
-1,1,1,0,0,1,0,0,1,
-
-1,1,1,0,0,1,1,1,1,
-
-1,1,1,0,0,1,0,1,1,
-
-1,1,1,0,0,1,1,0,1,
-
-0,1,1,0,0,1,1,1,1,
-
-0,1,1,1,0,1,0,0,1,
-
-0,1,1,1,0,1,0,1,1,
-
-0,1,1,1,0,1,0,1,1,
-
-1,0,1,0,0,1,0,1,1,
-
-1,1,1,0,0,1,0,1,1,
-
-1,0,1,0,0,1,1,1,1,
-
-0,1,1,0,0,1,1,1,1,
-
-0,1,1,1,0,1,1,1,1,
-
-0,1,0,0,0,1,1,1,1,
-
-0,1,0,1,0,1,1,1,1,
-
-0,0,1,1,0,1,1,1,1,
-
-0,0,1,1,0,1,1,1,1,
-
-1,0,0,1,0,1,1,1,1,
-
-1,0,0,1,0,1,1,1,1,
-
-0,0,0,1,0,1,1,1,1,
-
-0,1,0,1,0,0,1,1,1,
-
-1,0,0,1,0,1,1,1,1,
-
-1,0,0,1,0,1,1,1,1,
-
-1,0,0,1,0,0,1,1,1,
-
-1,1,0,1,0,0,1,1,1,
-
-1,1,1,1,0,0,1,1,1,
-
-1,1,1,1,0,1,1,1,1,
-
-1,1,1,1,0,1,1,1,1,
-
-1,1,1,1,0,0,1,1,1,
-
-1,1,1,1,0,0,0,1,1,
-
-1,1,1,1,0,1,0,1,1,
-
-1,1,1,1,0,1,1,1,1,
-
-1,1,1,1,0,1,1,0,1,
-
-1,1,1,1,0,1,1,1,1,
-
-1,1,1,1,0,1,1,1,1,
-
-1,1,1,0,0,1,1,1,1,
-
-0.99,1,1,1,0,1,1,1,1,
-
-1,1,1,1,0,1,1,1,1,
-
-1,1,0,1,0,1,1,1,1,
-
-1,1,1,1,0,1,0,1,1,
-
-1,1,1,1,0,1,0,1,1,
-
-1,1,0,1,0,1,1,1,1
+![LearnGesture_ExampleWts.png](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture_ExampleWts.png )
