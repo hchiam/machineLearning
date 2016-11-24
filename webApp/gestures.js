@@ -98,7 +98,6 @@ function create3DMatrix(snapshots,rows,columns) {
 function create2DMatrix(rows,columns) {
     var y = rows;
     var z = columns;
-    var a = "";
     var matrix = new Array(y);
     for (j = 0; j < y; j++) {
         matrix[j] = new Array(z);
