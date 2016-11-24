@@ -4,6 +4,9 @@
 * `gestures.js`:  the "brains" of the web page. Tries to detect a mouse gesture when the mouse runs over the "pad".
 * `gestures.css`:  the "looks/styling" of the presentation of the web page.
 
+Extra file:
+* `split.py`:  convenience python file to format wts string (1 matrix per timestamp = 9 values per row) for copying-and-pasting or for creating visualizations of the neural network weights.
+
 Uses a simple time delay neural network [https://en.wikipedia.org/wiki/Time_delay_neural_network](https://en.wikipedia.org/wiki/Time_delay_neural_network).
 
 Instead of running the html file locally, you can try out the web app live here: [https://codepen.io/hchiam/pen/rrwQRa](https://codepen.io/hchiam/pen/rrwQRa).
@@ -58,13 +61,15 @@ wts=
 
 ![LearnGesture_ExampleWts01.png](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture_ExampleWts01.png )
 
-## ALTERNATE Parameters/Version that worked for "two quick clockwise circles with the mouse":
+## ALTERNATE Parameter Change:
+
+For gestures.js, commit 5093f422ea0cffa8f10e80fed0e2a30a60a466f6
 
 ```
 var confidenceThreshold = 80;
 ```
 
-## ALTERNATE Example Synapse Weights for "two quick clockwise circles with the mouse":
+## ALTERNATE Example Synapse Weights:
 
 Each "row" below = one timestamp or snapshot.  
 Each "column" below = direction of mouse cursor motion at each timestamp.  
