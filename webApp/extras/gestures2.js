@@ -424,15 +424,15 @@ function detectGesture(event) {
     gesture = "?";
     if (outputValue > confidenceThreshold) {
         gesture = "CLOCKWISE CIRCLES.";
-        document.getElementById("pad").style.backgroundColor = "green";
+        document.getElementById("pad").style.backgroundColor = "yellow";
     } else {
-        document.getElementById("pad").style.backgroundColor = "red";
+        document.getElementById("pad").style.backgroundColor = "blue";
     }
     if (outputValue2 > confidenceThreshold) {
         gesture = "UP/DOWN.";
-        document.getElementById("pad2").style.backgroundColor = "green";
+        document.getElementById("pad2").style.backgroundColor = "yellow";
     } else {
-        document.getElementById("pad2").style.backgroundColor = "red";
+        document.getElementById("pad2").style.backgroundColor = "blue";
     }
     return gesture;
 }
@@ -454,10 +454,12 @@ function showGesture(gesture) {
 function toggleCheckboxText() {
     if (document.getElementById("learn").checked === true) {
         document.getElementById("yesno").innerHTML = "LEARNING gesture (press spacebar to stop)";
-        document.getElementById("pad").style.backgroundColor = "blue";
+        document.getElementById("pad").style.backgroundColor = "green";
+        document.getElementById("pad2").style.backgroundColor = "green";
     } else {
         document.getElementById("yesno").innerHTML = "NOT learning gesture (press spacebar to start)";
-        document.getElementById("pad").style.backgroundColor = "red";
+        document.getElementById("pad").style.backgroundColor = "blue";
+        document.getElementById("pad2").style.backgroundColor = "blue";
     }
 }
 
