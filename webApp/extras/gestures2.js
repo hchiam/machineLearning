@@ -373,6 +373,7 @@ function updateSynapsesWeights() {
         }
     }
     document.getElementById("wts").innerHTML = ['wts='+wts];
+    document.getElementById("wts2").innerHTML = ['wts2='+wts2];
 }
 
 function round(x,digits) {
@@ -415,9 +416,9 @@ function detectGesture(event) {
     outputValue2 = round(outputValue2,2); // round to 2 decimal places
     outputValue2 = outputValue2*100; // get percentage
     // debug output
-    document.getElementById("confidence").innerHTML = "confidence="+outputValue+"%";
+    document.getElementById("confidence").innerHTML = "confidence2="+outputValue+"%";
     document.getElementById("meter").value = outputValue/100;
-    document.getElementById("confidence2").innerHTML = "confidence="+outputValue2+"%";
+    document.getElementById("confidence2").innerHTML = "confidence2="+outputValue2+"%";
     document.getElementById("meter2").value = outputValue2/100;
     // set gesture and pad colour
     gesture = "?";
