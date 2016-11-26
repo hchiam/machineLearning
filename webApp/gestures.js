@@ -18,8 +18,8 @@ var xNN = columns;
 var yNN = rows;
 var zNN = snapshots;
 var numOfWts = xNN * yNN * zNN;
-var wts = loadPretrainedWts();
-//var wts = create3DMatrix(snapshots,rows,columns); // so guarantee same size
+//var wts = loadPretrainedWts();
+var wts = create3DMatrix(snapshots,rows,columns); // so guarantee same size
 var testInputMatrix = create3DMatrix(snapshots,rows,columns); // so guarantee same size
 
 function loadPretrainedWts() {
@@ -361,10 +361,10 @@ function detectGesture(event) {
     document.getElementById("meter").value = outputValue/100;
     if (outputValue > confidenceThreshold) {
         gesture = "DETECTED!";
-        document.getElementById("pad").style.backgroundColor = "green";
+        document.getElementById("pad").style.backgroundColor = "red";
     } else {
         gesture = "?";
-        document.getElementById("pad").style.backgroundColor = "red";
+        document.getElementById("pad").style.backgroundColor = "blue";
     }
     return gesture;
 }
@@ -386,10 +386,10 @@ function showGesture(gesture) {
 function toggleCheckboxText() {
     if (document.getElementById("learn").checked === true) {
         document.getElementById("yesno").innerHTML = "LEARNING gesture (press spacebar to stop)";
-        document.getElementById("pad").style.backgroundColor = "blue";
+        document.getElementById("pad").style.backgroundColor = "green";
     } else {
         document.getElementById("yesno").innerHTML = "NOT learning gesture (press spacebar to start)";
-        document.getElementById("pad").style.backgroundColor = "red";
+        document.getElementById("pad").style.backgroundColor = "blue";
     }
 }
 
