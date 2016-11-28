@@ -68,7 +68,7 @@ Notice any patterns?
 
 wts = 
 
-![LearnGesture_ExampleWts01.png](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture_ExampleWts01.png )
+![LearnGesture_ExampleWts01.png](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture_ExampleWts01.png)
 
 ## Parameter CHANGES that make it "ONE quick clockwise circle with the mouse":
 
@@ -101,4 +101,8 @@ Notice any patterns?
 
 wts = 
 
-![LearnGesture_ExampleWts.png](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture_ExampleWts.png )
+![LearnGesture_ExampleWts.png](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture_ExampleWts.png)
+
+Here's that same info, animated:
+
+![circle.gif](https://github.com/hchiam/machineLearning/blob/master/pictures/circle.gif)
