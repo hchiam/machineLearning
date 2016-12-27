@@ -21,7 +21,7 @@ You can have it even simpler and just run code in your browser without installin
 
 # machine learning web app:
 
-You can try out the following web app live on CodePen: [https://codepen.io/hchiam/pen/rrwQRa](https://codepen.io/hchiam/pen/rrwQRa).
+You can try out the following web app live on CodePen: [https://codepen.io/hchiam/full/rrwQRa](https://codepen.io/hchiam/full/rrwQRa).
 
 ![webApp](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture.png "a web app that tries to detect a gesture made by the mouse anywhere on the page")
 
