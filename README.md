@@ -49,3 +49,7 @@ The next few code samples are based on "Machine Learning Recipes with Josh Gordo
 ## Sirajology "Learn Python for Data Science" Challenges:
 
 1. [https://github.com/hchiam/gender_classification_challenge](https://github.com/hchiam/gender_classification_challenge)
+
+## Notes and Code from Udacity course AI for Robotics:
+
+https://github.com/hchiam/ai_for_robotics
