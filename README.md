@@ -31,6 +31,10 @@ Under ["webApp"](https://github.com/hchiam/machineLearning/blob/master/webApp) f
 
 ![neurons flashing](https://github.com/hchiam/machineLearning/blob/master/pictures/circle.gif "neurons flashing")
 
+# Notes and Code from Udacity course AI for Robotics:
+
+https://github.com/hchiam/ai_for_robotics
+
 # Extra installation required but still pretty simple:
 
 * `neuralNet_iamtrask.py`:  "11 lines of code" for a 2-layer neural net code from [http://iamtrask.github.io/2015/07/12/basic-python-network](http://iamtrask.github.io/2015/07/12/basic-python-network).  Requires NumPy installed to run.
@@ -45,10 +49,6 @@ The next few code samples are based on "Machine Learning Recipes with Josh Gordo
 * `googleExample3.py`:  a higher-level take on the decision tree classifier in `googleExample2.py`.  Requires scikit-learn installed to run.
 
 * `googleExample4.py`:  building your our classifier.  `randomGuessClassifier()` and `KNearestNeighbours_barebones()`.
-
-## Notes and Code from Udacity course AI for Robotics:
-
-https://github.com/hchiam/ai_for_robotics
 
 ## Sirajology "Learn Python for Data Science" Challenges:
 
