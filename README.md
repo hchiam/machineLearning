@@ -1,5 +1,5 @@
 # machineLearning:
-Simple test code for machine learning in the Python programming language.
+Simple test code for machine learning / neural networks / artificial intelligence in the Python programming language.
 
 No need to install a ton of things to import.  Just read some commented code and get it running quickly to gather some intuitions.
 
