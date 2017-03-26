@@ -1,7 +1,7 @@
 # machineLearning:
 Simple test code for machine learning / neural networks / artificial intelligence (ML/NN/AI) in the Python programming language.
 
-No need to install a ton of things to import.  Just read some commented code and get it running quickly to gather some intuitions.
+No need to install a ton of things to import (more sophisticated code further down do need installations).  Just read some commented code and get it running quickly to gather some intuitions.
 
 You can have it even simpler and just run code in your browser without installing anything:  [here](http://hchiam.blogspot.ca/2016/08/machine-learning-very-basic-code.html).
 
