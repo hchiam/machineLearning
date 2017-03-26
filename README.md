@@ -50,6 +50,10 @@ The next few code samples are based on "Machine Learning Recipes with Josh Gordo
 
 * `googleExample4.py`:  building your our classifier.  `randomGuessClassifier()` and `KNearestNeighbours_barebones()`.
 
+## machinelearningmastery.com:
+
+[https://github.com/hchiam/machineLearning/blob/master/machinelearningmastery](https://github.com/hchiam/machineLearning/blob/master/machinelearningmastery)
+
 ## Sirajology "Learn Python for Data Science" Challenges:
 
 1. [https://github.com/hchiam/gender_classification_challenge](https://github.com/hchiam/gender_classification_challenge)
