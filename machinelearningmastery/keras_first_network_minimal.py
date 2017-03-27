@@ -1,5 +1,5 @@
 # create a neural network using Keras
-# http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
+# reference: http://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
 
 from keras.models import Sequential
 from keras.layers import Dense
