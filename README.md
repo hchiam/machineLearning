@@ -25,7 +25,7 @@ You can try out the following web app live on CodePen: [https://codepen.io/hchia
 
 ![webApp](https://github.com/hchiam/machineLearning/blob/master/pictures/LearnGesture.png "a web app that tries to detect a gesture made by the mouse anywhere on the page")
 
-Under ["webApp"](https://github.com/hchiam/machineLearning/blob/master/webApp) folder:
+Under ["webApp_MachineLearning_Gesture"](https://github.com/hchiam/webApp_MachineLearning_Gesture) folder:
 * `gestures.html`:  the "structure" of the presentation of the web page.
 * `gestures.js`:  the "brains" of the web page.  Tries to detect a mouse gesture when the mouse runs over the "pad".
 
