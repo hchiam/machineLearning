@@ -30,17 +30,17 @@ test_data = iris.data[test_idx]
 clf = tree.DecisionTreeClassifier()
 clf.fit(train_data, train_target)
 
-print 'target labels =\n ', test_target # this are the target labels for our algorithm:  it should show flowers of each type [0, 1, 2]
-print 'tree-predicted labels =\n ', clf.predict(test_data) # features --(tree)--> our tree's predicted labels
+print('target labels =\n ', test_target) # this are the target labels for our algorithm:  it should show flowers of each type [0, 1, 2]
+print('tree-predicted labels =\n ', clf.predict(test_data)) # features --(tree)--> our tree's predicted labels
 
 # insert graphviz code here to see decision tree visualization generated as a pdf file
 # this is cool!  it automatically creates a kind of taxonomy!
 
-print 'data = ', test_data[0]
-print 'label = ', test_target[0]
+print('data = ', test_data[0])
+print('label = ', test_target[0])
 
-print 'feature names =\n ', iris.feature_names
-print 'target names =\n ', iris.target_names
+print('feature names =\n ', iris.feature_names)
+print('target names =\n ', iris.target_names)
 
 # Closing point:
 # Every question the decision tree asks must be about one of the features you choose.

@@ -9,7 +9,7 @@
 
 # train classifier with deep learning from tensorflow for poets
 
-from sklearn import metrics, cross_validation
+from sklearn import metrics, model_selection # cross_validation was deprecated -> model_selection
 import tensorflow as tf
 from tensorflow.contrib import learn
 

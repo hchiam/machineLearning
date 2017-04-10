@@ -56,7 +56,7 @@ X = iris.data
 y = iris.target
 
 # split into test and train data
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split # model_selection <- cross_validation (deprecated)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = .5)
 
 # create classifier
@@ -68,13 +68,13 @@ my_classifier.fit(X_train, y_train)
 
 # test classifier
 predictions = my_classifier.predict(X_test)
-print '\npredictions =', predictions
+print('\npredictions =', predictions)
 
 # calculate accuracy of predictions against the true labels in y_test
 from sklearn.metrics import accuracy_score
-print '\naccuracy =', accuracy_score(y_test, predictions)
+print('\naccuracy =', accuracy_score(y_test, predictions))
 
-print "\a"
+print("\a") # beep
 
 
 
