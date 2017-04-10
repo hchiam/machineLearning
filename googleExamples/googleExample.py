@@ -14,10 +14,6 @@ clf = tree.DecisionTreeClassifier()
 
 # TRAIN the classifier
 clf = clf.fit(features, labels) # fit features and labels; "find patterns in the data"
-<<<<<<< HEAD
-print(clf.predict([[160, 0]])) # 0 = apple ; 1 = orange
-=======
 
 # print OUTPUT
-print clf.predict([[160, 0]]) # 0 = apple ; 1 = orange
->>>>>>> e18442e1b86d66f72e0621d6d85f90ad2d946a87
+print(clf.predict([[160, 0]])) # 0 = apple ; 1 = orange

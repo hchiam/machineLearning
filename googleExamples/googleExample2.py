@@ -19,11 +19,11 @@ iris = load_iris()
 
 test_idx = [0,50,100] # will "remove" these indices from the training data set (one for each iris type)
 
-# set the training labels and data (on the remaining data)
+# training data (on the remaining data)
 train_target = np.delete(iris.target, test_idx)
 train_data = np.delete(iris.data, test_idx, axis=0)
 
-# set the testing labels and data (on the examples "removed")
+# testing data (on the examples "removed")
 test_target = iris.target[test_idx]
 test_data = iris.data[test_idx]
 
