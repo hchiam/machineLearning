@@ -60,4 +60,4 @@ The next few code samples are based on "Machine Learning Recipes with Josh Gordo
 
 ## Natural Evolution Strategies (NES) Example:
 
-`nes.py`. See https://singularityhub.com/2017/04/06/openai-just-beat-the-hell-out-of-deepmind-with-an-algorithm-from-the-80s/ and https://blog.openai.com/evolution-strategies/
+`nes.py`. See https://blog.openai.com/evolution-strategies/
