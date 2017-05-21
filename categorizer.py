@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn import tree
+from sklearn.neural_network import MLPClassifier
 
 def get_data(file_name):
     f = open(file_name)
@@ -16,7 +16,7 @@ def get_labels(data):
     return data[:,-1]
 
 def create_classifier(features, labels):
-    clf = tree.DecisionTreeClassifier()
+    clf = MLPClassifier()
     clf = clf.fit(features, labels)
     return clf
 
