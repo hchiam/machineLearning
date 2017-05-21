@@ -1,7 +1,7 @@
 import numpy as np
 
 f = open("data.csv")
-# f.readline() # skip the first row
+f.readline() # skip the first row
 data = np.loadtxt(f)
 
 features = data[:,[0,1,2,3]]
