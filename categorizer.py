@@ -16,7 +16,7 @@ def get_labels(data):
     return data[:,-1]
 
 def create_classifier(features, labels):
-    clf = MLPClassifier()
+    clf = MLPClassifier(alpha=20) # using huge learning rate alpha because small data size
     clf = clf.fit(features, labels)
     return clf
 
