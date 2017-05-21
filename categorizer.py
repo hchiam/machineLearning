@@ -8,10 +8,12 @@ def get_data(file_name):
     return data
 
 def get_features(data):
-    return data[:,[0,1,2,3]]
+    # expect label to be last column
+    return data[:,:-1]
 
 def get_labels(data):
-    return data[:,4]
+    # expect label to be last column
+    return data[:,-1]
 
 def create_classifier(features, labels):
     clf = tree.DecisionTreeClassifier()
