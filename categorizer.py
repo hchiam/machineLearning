@@ -23,7 +23,8 @@ def run():
     features = get_features(data_train)
     labels = get_labels(data_train)
     categorizer = create_classifier(features, labels)
-    print(categorizer.predict([[160, 0, 1, 2]]))
-    print(categorizer.predict([[1,2,3,4]]))
+    data_test = get_data('data-unlabeled.csv')
+    for example in data_test:
+        print(categorizer.predict([example]))
 
 run()
