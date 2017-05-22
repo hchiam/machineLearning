@@ -61,3 +61,7 @@ The next few code samples are based on "Machine Learning Recipes with Josh Gordo
 ## Natural Evolution Strategies (NES) Example:
 
 `nes.py`. See https://blog.openai.com/evolution-strategies/
+
+## Keras
+
+https://github.com/hchiam/learning-keras
