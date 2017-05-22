@@ -1,3 +1,5 @@
+(Example that already works: https://github.com/hchiam/learning-keras/blob/master/mnist_mlp.py (gets data for you).)
+
 # Based on Jason Brownlee's MachineLearningMastery.com
 
 [http://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/](http://machinelearningmastery.com/setup-python-environment-machine-learning-deep-learning-anaconda/)
