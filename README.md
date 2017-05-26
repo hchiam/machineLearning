@@ -65,3 +65,9 @@ The next few code samples are based on "Machine Learning Recipes with Josh Gordo
 ## Keras
 
 https://github.com/hchiam/learning-keras
+
+## Synaptic.js
+
+A JavaScript neural network library. My example codepen: 
+
+https://codepen.io/hchiam/pen/gWydZd?editors=1010
