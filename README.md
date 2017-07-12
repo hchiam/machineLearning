@@ -1,3 +1,5 @@
+(Just one of the things I'm learning. https://github.com/hchiam/learning)
+
 # machineLearning:
 Simple test code for machine learning / neural networks / artificial intelligence (ML/NN/AI) in the Python programming language.
 
