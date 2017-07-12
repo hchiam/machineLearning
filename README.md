@@ -31,6 +31,10 @@ Under ["webApp_MachineLearning_Gesture"](https://github.com/hchiam/webApp_Machin
 
 ![neurons flashing](https://github.com/hchiam/machineLearning/blob/master/pictures/circle.gif "neurons flashing")
 
+# Markov Word Generator - create words with the same "feel":
+
+https://github.com/hchiam/word_gen
+
 # Notes and Code from Udacity course AI for Robotics:
 
 https://github.com/hchiam/ai_for_robotics
