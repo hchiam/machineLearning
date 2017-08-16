@@ -41,6 +41,10 @@ https://github.com/hchiam/word_gen
 
 https://github.com/hchiam/ai_for_robotics
 
+# Genetic Algorithm - applied to one of my linguistics projects:
+
+https://github.com/hchiam/cogLang-geneticAlgo
+
 # Extra installation required but still pretty simple:
 
 * `neuralNet_iamtrask.py`:  "11 lines of code" for a 2-layer neural net code from [http://iamtrask.github.io/2015/07/12/basic-python-network](http://iamtrask.github.io/2015/07/12/basic-python-network).  Requires NumPy installed to run.
