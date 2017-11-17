@@ -1,7 +1,7 @@
 (Just one of the things I'm learning. https://github.com/hchiam/learning)
 
 # machineLearning:
-Simple test code for machine learning / neural networks / artificial intelligence (ML/NN/AI) in the Python programming language.
+Simple test code for machine learning / neural networks / artificial intelligence (ML/NN/AI) in the Python programming language. And some live JavaScript examples too, like this one: https://codepen.io/hchiam/full/QGOyaE (for best results, open in Chrome).
 
 No need to install a ton of things to import (more sophisticated code further down do need installations).  Just read some commented code and get it running quickly to gather some intuitions.
 
