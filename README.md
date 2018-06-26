@@ -86,3 +86,7 @@ https://github.com/hchiam/learning-keras
 A JavaScript neural network library. My example codepen: 
 
 https://codepen.io/hchiam/pen/gWydZd?editors=1010
+
+## ml5.js web-friendly machine learning, built on TensorFlow.js
+
+https://codepen.io/hchiam/pen/LrJVPQ
