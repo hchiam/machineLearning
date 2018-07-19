@@ -90,3 +90,7 @@ https://codepen.io/hchiam/pen/gWydZd?editors=1010
 ## ml5.js web-friendly machine learning, built on TensorFlow.js
 
 https://codepen.io/hchiam/pen/LrJVPQ
+
+## NLP with spaCy and textacy
+
+https://github.com/hchiam/nlp_spacy_textacy
