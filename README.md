@@ -94,3 +94,9 @@ https://codepen.io/hchiam/pen/LrJVPQ
 ## NLP with spaCy and textacy
 
 https://github.com/hchiam/nlp_spacy_textacy
+
+# Learn more with freeCodeCamp:
+
+For example, here's a video I found helpful for understanding RNNs and LSTM: https://www.freecodecamp.org/learn/machine-learning-with-python/how-neural-networks-work/recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
+
+Then later reading up on attention and Transformers makes more sense.
