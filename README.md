@@ -95,12 +95,12 @@ https://codepen.io/hchiam/pen/LrJVPQ
 
 https://github.com/hchiam/nlp_spacy_textacy
 
-# Learn more with freeCodeCamp:
+## Learn more with freeCodeCamp:
 
 For example, here's a video I found helpful for understanding RNNs and LSTM: https://www.freecodecamp.org/learn/machine-learning-with-python/how-neural-networks-work/recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
 Then later reading up on attention and Transformers makes more sense.
 
-# Crash Course AI:
+## Crash Course AI:
 
 https://github.com/hchiam/crash-course-ai-labs
