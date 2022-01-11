@@ -105,6 +105,10 @@ Then later reading up on attention and Transformers makes more sense.
 
 https://github.com/hchiam/crash-course-ai-labs
 
-## AutoML
+## AutoML:
 
 https://github.com/hchiam/learning-automl
+
+## Links to more:
+
+https://github.com/hchiam/learning-ml
