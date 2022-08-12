@@ -1,3 +1,51 @@
-# Misnomers and Confusing Terms in ML
+# 25 Misnomers and Confusing Technical Terms in ML
 
 https://product.hubspot.com/blog/misnomers-and-confusing-terms-in-machine-learning
+
+Common vocab = convention != beginner-friendly. Sometimes misleading names.
+
+## stats
+
+1. multinomial distribution = "categorical distribution"
+2. inference = "prediction"
+3. R^2 = "sqrt(R^4)"
+4. multi-armed bandit = "many one-armed bandits" or "stateless reinforcement learning" or "adaptive tests"
+5. regression / logistic regression = "logistic model"
+
+## models
+
+1. ML model / algorithm
+2. model drift = "concept drift" or "example drift" or "distribution drift"
+3. black-box model = "black-box mapping"
+4. non-parametric model = "non-parametric algorithm"
+
+## optimization
+
+1. learning rate = "step size" (for ϵ or maybe for ϵ▽E(w) entirely)
+2. Stochastic Gradient Descent (SGD) = "Stochastic Approximation of General Gradient of at-this-point-Expected Descent (SAGGED)"
+3. momentum = "friction coefficient"
+4. backpropagation = "loss gradient backpropagation"
+
+## losses and activations
+
+1. cross-entropy = "error function"
+2. softmax/hardmax/softplus = "softargmax" and "softrectifier" or "Boltzmann function"
+3. softmax loss = "cross-entropy loss" or "_**softmax**_ activation on a dense layer followed by cross-entropy _**loss**_"
+
+## neural networks
+
+1. neural networks = "differentiable, parameterized geometric functions" or "functionchain" or "multi-layer modeling" or "chain train"
+2. multi-layer perceptron (MLP) = "feed-forward neural network" or "stacked logistic regression" or "plain chain train"
+3. input layer = "inputs"
+4. hidden layer = "latent layers"
+
+## deep learning
+
+1. tensor = "multi-dimensional array" (AKA "holor")
+2. convolutional layer (i.e. cross-correlation in library implementations)
+3. deconvolutional layer = "transposed convolution"
+4. Bidirectional Encoder Representations from Transformers (BERT) = "Non-directional Encoder Representations from Transformers (NERT)"
+5. RNN gates:
+   - forget gate = "remember gate" or "keep gate"
+   - input gate = "write gate"
+   - output gate = "read gate"
