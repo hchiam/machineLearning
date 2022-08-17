@@ -19,9 +19,9 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
    - classification for categorical variable, regression for continuous variable
    - but logistic regression is used for classification because it actually outputs a continuous probability number output (stats analysis: continuous value, but ML goal: final classification output)
 
-## models
+## so-called "models"
 
-1. ML model / algorithm
+1. ML model / algorithm = both are ambiguous/fuzzy and overlap with each other.
 2. model drift = "concept drift" or "example drift" or "distribution drift"
 3. black-box model = "black-box mapping"
 4. non-parametric model = "non-parametric algorithm"
