@@ -61,6 +61,7 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 3. deconvolutional layer = actually "transposed convolution" (but ML made these 2 synonyms, which is different from the strict sense of deconvolution in math).
    - https://github.com/vdumoulin/conv_arithmetic#transposed-convolution-animations
 4. Bidirectional Encoder Representations from Transformers (BERT) = "Non-directional Encoder Representations from Transformers (NERT)"
+   - btw "transformers" use "attention", which enables weights that can change "focus" during runtime instead of being fixed at runtime, and enables focus on specific details depending on context (https://en.wikipedia.org/wiki/Attention_(machine_learning))
 5. RNN gates:
    - forget gate = "remember gate" or "keep gate"
    - input gate = "write gate"
