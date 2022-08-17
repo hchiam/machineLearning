@@ -6,7 +6,11 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 
 ## stats
 
-1. multinomial distribution = "categorical distribution"
+1. multinomial distribution = actually is categorical distribution (ML/NLP likes to call it "multinomial distribution", e.g. in Python code)
+   - bernoulli distribution = 2 categories, 1 trial = 1 coin flip
+   - binomial distribution = 2 categories, n trials = n coin flips
+   - categorical distribution = >2 categories, 1 trial = 1 dice roll
+   - multinomial distribution = >2 categories, n trials = n dice rolls
 2. inference = "prediction"
 3. R^2 = "sqrt(R^4)"
 4. multi-armed bandit = "many one-armed bandits" or "stateless reinforcement learning" or "adaptive tests"
