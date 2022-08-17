@@ -56,6 +56,7 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 ## deep learning
 
 1. tensor = "multi-dimensional array" (AKA "holor")
+   - "tensor" has a more constrained definition in physics, but is generalized/looser in ML (just "multi-dimensional").
 2. convolutional layer (i.e. cross-correlation in library implementations)
 3. deconvolutional layer = "transposed convolution"
 4. Bidirectional Encoder Representations from Transformers (BERT) = "Non-directional Encoder Representations from Transformers (NERT)"
