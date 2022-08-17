@@ -49,7 +49,7 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 ## neural networks
 
 1. neural networks = "differentiable, parameterized geometric functions" or "functionchain" or "multi-layer modeling" or "chain train"
-2. multi-layer perceptron (MLP) = "feed-forward neural network" or "stacked logistic regression" or "plain chain train"
+2. multi-layer perceptron (MLP) = "feed-forward neural network" or "stacked logistic regression" or "plain chain train". (Even "multi-layer multi-perceptron" isn't accurate, since MLPs are usually also non-linear/probabilistic, which a perceptron isn't.)
 3. input layer = "inputs"
 4. hidden layer = "latent layers"
 
