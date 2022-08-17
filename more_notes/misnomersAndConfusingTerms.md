@@ -2,6 +2,8 @@
 
 https://product.hubspot.com/blog/misnomers-and-confusing-terms-in-machine-learning
 
+(See further sources at that ^ link above.)
+
 Common vocab = convention != beginner-friendly. Sometimes misleading names.
 
 ## stats
