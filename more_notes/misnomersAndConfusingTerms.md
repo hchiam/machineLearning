@@ -41,7 +41,8 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 
 ## losses and activations
 
-1. cross-entropy = "error function"
+1. cross-entropy = ???
+   - cross-entropy = like comparing similarity of 2 languages by using the minimal Huffman Coding based on letter frequencies of one language to encode the other language, i.e. one way to quantify similarity of letter frequencies: https://www.reddit.com/r/explainlikeimfive/comments/gwzwot/eli5_what_is_crossentropy_in_mlnlp/
 2. softmax/hardmax/softplus = "softargmax" and "softrectifier" or "Boltzmann function"
 3. softmax loss = "cross-entropy loss" or "_**softmax**_ activation on a dense layer followed by cross-entropy _**loss**_"
 
