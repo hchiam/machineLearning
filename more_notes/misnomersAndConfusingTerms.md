@@ -11,7 +11,7 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
    - binomial distribution = 2 categories, n trials = n coin flips
    - categorical distribution = >2 categories, 1 trial = 1 dice roll
    - multinomial distribution = >2 categories, n trials = n dice rolls
-2. inference = "prediction"
+2. inference = "prediction" (because in stats, an inference is more general, but ML has 2 types of "inference": training/learning time, and prediction time. Only during prediction time does ML call it "inference")
 3. R^2 = "sqrt(R^4)"
 4. multi-armed bandit = "many one-armed bandits" or "stateless reinforcement learning" or "adaptive tests"
 5. regression / logistic regression = "logistic model"
