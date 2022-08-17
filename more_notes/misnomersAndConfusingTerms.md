@@ -1,4 +1,4 @@
-# 25 Misnomers and Confusing Technical Terms in ML
+# 25 Misnomers and Confusing Technical Terms in ML (Machine Learning)
 
 https://product.hubspot.com/blog/misnomers-and-confusing-terms-in-machine-learning
 
