@@ -57,7 +57,7 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 
 1. tensor = "multi-dimensional array" (AKA "holor")
    - "tensor" has a more constrained definition in physics, but is generalized/looser in ML (just "multi-dimensional").
-2. convolutional layer (i.e. cross-correlation in library implementations)
+2. convolutional layer (i.e. library implementations actually use cross-correlation because it's simpler to implement, just flipped)
 3. deconvolutional layer = "transposed convolution"
 4. Bidirectional Encoder Representations from Transformers (BERT) = "Non-directional Encoder Representations from Transformers (NERT)"
 5. RNN gates:
