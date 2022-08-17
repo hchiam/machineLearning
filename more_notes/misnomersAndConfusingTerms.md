@@ -16,6 +16,8 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 4. multi-armed bandit = "many one-armed bandits" or "stateless reinforcement learning" or "adaptive tests". Like a bunch of slot machines with 1 arm each and different unknown probabilities of success, and you have to decide which, how many times, and in what order to play each slot machine. A subset of stochastic scheduling.
    - btw: stochastic vs random vs unpredictable vs chaotic: https://www.quora.com/What-is-the-difference-between-chaotic-systems-and-stochastic-systems
 5. regression / logistic regression = "logistic model"
+   - classification for categorical variable, regression for continuous variable
+   - but logistic regression is used for classification because it actually outputs a continuous probability number output (stats analysis: continuous value, but ML goal: final classification output)
 
 ## models
 
