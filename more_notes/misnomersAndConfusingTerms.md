@@ -22,7 +22,7 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 ## so-called "models"
 
 1. ML model / algorithm = both are ambiguous/fuzzy and overlap with each other.
-2. model drift = "concept drift" or "example drift" or "distribution drift"
+2. model drift = "concept drift" or "example drift" or "distribution drift" (when the features/labels are drifting away from the training distributions, but the model fails to also drift away from the training distributions).
 3. black-box model = "black-box mapping"
 4. non-parametric model = "non-parametric algorithm"
 
