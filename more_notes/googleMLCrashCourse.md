@@ -23,4 +23,4 @@ These are notes more for my own reminders and active learning, not a summary of 
   - ideal learning rate for general convex functions = ???
 
 - **SGD (Stochastic Gradient Descent)** = batch size of 1 chosen at random to calculate the next gradient (and the next step) = more efficient than full-batch gradient descent, but very noisy.
-- **mini-batch SGD** = batch size of 10-1000 chose at random to calculate the next gradient (and the next step) = less noisy than SGD, and still more efficient than full-batch gradient descent.
+- **mini-batch SGD** = batch size of 10-1000 chose at random to calculate the next gradient (and the next step) = less noisy than SGD, and still more efficient than full-batch gradient descent. Why does it work? Because large data sets naturally are more likely to contain redundant information, which is helpful to smooth out noisy gradients, but at larger and large scales start to stop helping as much.
