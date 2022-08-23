@@ -15,7 +15,7 @@ These are notes more for my own reminders and active learning, not a summary of 
 - **partial derivative**: 𝛅f/𝛅x = derivative with respect to only one variable x when there are other variables like (x, y, ...)
 - **gradient of a function**: ▽f = ▽f(x,y) = (𝛅f/𝛅x, 𝛅f/𝛅y) = a vector that has partial derivatives for each variable or dimension = a vector where each dimension has a ratio of how much f changes when each of its variables changes (variable = dimension). ▽f = points in greatest increase. -▽f = points in greatest decrease = the direction you might want to go in to reduce error.
 
-- learning rate = step size
+- learning rate = step size = multiplier for gradient, and is an example of a hyperparameter
   - ideal learning rate in 1D: 1/f(x)''
   - ideal learning rate in 2D: 1/Hessian() = 1/matrixOfSecondPartialDerivatives()
   - ideal learning rate for general convex functions = ???
