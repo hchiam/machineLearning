@@ -25,7 +25,21 @@ These are notes more for my own reminders and active learning, not a summary of 
 - **SGD (Stochastic Gradient Descent)** = batch size of 1 chosen at random to calculate the next gradient (and the next step) = more efficient than full-batch gradient descent, but very noisy.
 - **mini-batch SGD** = batch size of 10-1000 chose at random to calculate the next gradient (and the next step) = less noisy than SGD, and still more efficient than full-batch gradient descent. Why does it work? Because large data sets naturally are more likely to contain redundant information, which is helpful to smooth out noisy gradients, but at larger and large scales start to stop helping as much.
 
-- [NumPy refresher Colab UltraQuick Tutorial](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/numpy_ultraquick_tutorial.ipynb)
-- [pandas refresher Colab UltraQuick Tutorial](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
-- [tf.keras linear regression with fake data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_synthetic_data.ipynb)
-- [tf.keras linear regression with real data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_a_real_dataset.ipynb)
+[NumPy refresher Colab UltraQuick Tutorial for ML](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/numpy_ultraquick_tutorial.ipynb)
+
+```py
+import numpy as np
+array_1d = np.array([1, 2, 3])
+array_2d = np.array([[1, 2], [3, 4], [5, 6]])
+array_sequence = np.arange(1, 5) # [1,2,3,4]
+array_random_ints = np.random.randint(low=50, high=101, size=(6)) # 6 numbers in 50-100, exclusive of (101)
+array_random_floats = np.random.random([6]) # array of 6 random floats
+# "broadcasting" to auto-resize to arrays of compatible dimensions, like:
+print(array_1d * 2 + 0.01) # [2.01, 4.01, 6.01]
+```
+
+[pandas refresher Colab UltraQuick Tutorial for ML](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
+
+[tf.keras linear regression with fake data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_synthetic_data.ipynb)
+
+[tf.keras linear regression with real data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_a_real_dataset.ipynb)
