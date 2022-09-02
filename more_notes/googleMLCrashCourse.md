@@ -74,4 +74,71 @@ independent_clone = pd.DataFrame.copy(dataframe) # not affected by changes in th
 
 [tf.keras linear regression with fake data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_synthetic_data.ipynb)
 
+- try smaller learning rates (AKA "step sizes")
+- try larger epochs (i.e. "train more")
+- try smaller batches (i.e. "can't / don't need to check against all examples, per model update")
+
+```py
+import pandas as pd
+import tensorflow as tf
+from matplotlib import pyplot as plt
+def build_model(step_size): # learning rate = step size
+  model = tf.keras.models.Sequential()
+  model.add(tf.keras.layers.Dense(units=1, input_shape=(1,)))
+  model.compile(optimizer=tf.keras.optimizers.RMSprop(lr=step_size),
+                loss='mean_squared_error',
+                metrics=[tf.keras.metrics.RootMeanSquaredError()])
+  return model
+def train_model(model, feature, label, epochs, batch_size):
+  training_history = model.fit(x=feature,
+                               y=label,
+                               batch_size=batch_size,
+                               epochs=epochs)
+  trained_weight = model.get_weights()[0]
+  trained_bias = model.get_weights()[1]
+  epochs = training_history.epoch
+  epoch_history = pd.DataFrame(training_history.history)
+  error_history = epoch_history['root_mean_squared_error']
+  return trained_weight, trained_bias, epochs, error_history
+def plot_model(trained_weight, trained_bias, feature, label):
+  plt.xlabel('feature')
+  plt.ylabel('label')
+  plt.scatter(feature, label)
+  def model_red_line():
+    x0 = 0
+    y0 = trained_bias
+    x1 = feature[-1]
+    y1 = trained_weight * x1 + trained_bias
+    plt.plot([x0, x1], [y0, y1], c='r')
+  model_red_line()
+  plt.show()
+def plot_loss_history(epochs, error_history):
+  plt.figure()
+  plt.xlabel("Epoch")
+  plt.ylabel("Error")
+  plt.plot(epochs, error_history, label="Loss")
+  plt.legend()
+  plt.ylim([error_history.min()*0.97, error_history.max()])
+  plt.show()
+def learn_and_plot(features, labels, step_size, epochs, batch_size):
+  model = build_model(learning_rate)
+  trained_weight, trained_bias, epochs, error_history = train_model(
+    model,
+    features,
+    labels,
+    epochs,
+    batch_size)
+  plot_model(trained_weight, trained_bias, features, labels)
+  plot_loss_history(epochs, error_history)
+
+features = ([1.0, 2.0,  3.0,  4.0,  5.0,  6.0,  7.0,  8.0,  9.0, 10.0, 11.0, 12.0])
+labels   = ([5.0, 8.8,  9.6, 14.2, 18.8, 19.5, 21.4, 26.8, 28.9, 32.0, 33.8, 38.2])
+
+learning_rate = 0.2 # AKA step size
+epochs = 100
+batch_size = 2 # minibatches are faster than using all 12 examples per model update
+
+learn_and_plot(features, labels, learning_rate, epochs, batch_size)
+```
+
 [tf.keras linear regression with real data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_a_real_dataset.ipynb)
