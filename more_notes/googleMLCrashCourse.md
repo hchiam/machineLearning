@@ -38,7 +38,39 @@ array_random_floats = np.random.random([6]) # array of 6 random floats
 print(array_1d * 2 + 0.01) # [2.01, 4.01, 6.01]
 ```
 
-[pandas refresher Colab UltraQuick Tutorial for ML](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
+[NumPy + pandas refresher Colab UltraQuick Tutorial for ML](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
+
+- DataFrame = array with named columns and numbered rows
+
+```py
+import numpy as np
+import pandas as pd
+array_2d = np.array([[0, 3], [10, 7], [20, 9], [30, 14], [40, 15]])
+# array_2d = np.random.randint(low=0,high=101,size=(5,2))
+column_names = ['temperature', 'activity']
+dataframe = pd.DataFrame(data=array_2d, columns=column_names)
+#    temperature  activity
+# 0            0         3
+# 1           10         7
+# 2           20         9
+# 3           30        14
+# 4           40        15
+dataframe['new column name'] = dataframe['activity'] + 2
+#    temperature  activity  new column name
+# 0            0         3                5
+# 1           10         7                9
+# 2           20         9               11
+# 3           30        14               16
+# 4           40        15               17
+rows_0_to_2 = dataframe.head(3)
+rows_0_to_2 = dataframe[0:3]
+row_2 = dataframe.iloc[[2]]
+row_2 = dataframe[2:3]
+rows_2_to_4 = dataframe[2:5]
+temp_column = dataframe['temperature']
+cell_row_0_temp = dataframe['temperature'][0]
+independent_clone = pd.DataFrame.copy(dataframe) # not affected by changes in the original dataframe
+```
 
 [tf.keras linear regression with fake data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_synthetic_data.ipynb)
 
