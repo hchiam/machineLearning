@@ -27,6 +27,10 @@ These are notes more for my own reminders and active learning, not a summary of 
 
 [NumPy refresher Colab UltraQuick Tutorial for ML](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/numpy_ultraquick_tutorial.ipynb)
 
+<details>
+
+<summary>Click to expand code</summary>
+
 ```py
 import numpy as np
 array_1d = np.array([1, 2, 3])
@@ -38,9 +42,15 @@ array_random_floats = np.random.random([6]) # array of 6 random floats
 print(array_1d * 2 + 0.01) # [2.01, 4.01, 6.01]
 ```
 
+</details>
+
 [NumPy + pandas refresher Colab UltraQuick Tutorial for ML](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/pandas_dataframe_ultraquick_tutorial.ipynb)
 
 - DataFrame = array with named columns and numbered rows
+
+<details>
+
+<summary>Click to expand code</summary>
 
 ```py
 import numpy as np
@@ -72,11 +82,17 @@ cell_row_0_temp = dataframe['temperature'][0]
 independent_clone = pd.DataFrame.copy(dataframe) # not affected by changes in the original dataframe
 ```
 
+</details>
+
 [tf.keras linear regression with fake data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_synthetic_data.ipynb)
 
 - try smaller learning rates (AKA "step sizes")
 - try larger epochs (i.e. "train more")
 - try smaller batches (i.e. "can't / don't need to check against all examples, per model update")
+
+<details>
+
+<summary>Click to expand code</summary>
 
 ```py
 import pandas as pd
@@ -141,11 +157,17 @@ batch_size = 2 # minibatches are faster than using all 12 examples per model upd
 learn_and_plot(features, labels, learning_rate, epochs, batch_size)
 ```
 
+<details>
+
 [tf.keras linear regression with real data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_a_real_dataset.ipynb)
 
 - look at stats --> be wary of features with anomalies (e.g. max is way above what you'd expect given the quartiles for 25%, 50%, 75%, to estimate 100% = max)
 - look at stats --> correlation matrix might help find best-correlated features
 - consider combining features, like population and rooms --> population density
+
+<details>
+
+<summary>Click to expand code</summary>
 
 ```py
 import pandas as pd
@@ -241,3 +263,5 @@ learn_plot_predict(feature_name, label_name, learning_rate, epochs, batch_size, 
 # still not great - can we use stats to help us see which feature correlate with the label? use a correlation matrix!:
 correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse perfect
 ```
+
+</details>
