@@ -265,3 +265,8 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 ```
 
 </details>
+
+- ML 3 basic assumptions which affect generalizing: (may be violated in practice)
+  1. we get examples independently and identically ("i.i.d")
+  2. the distribution is stationary
+  3. we get examples from the same distribution
