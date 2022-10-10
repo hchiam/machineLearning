@@ -271,4 +271,4 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   2. the distribution is stationary
   3. we get examples from the same distribution
 - remember the model is only getting samples of the true distribution (think like a scientist) - keep model as simple as possible so doesn't overfit to peculiarities of just what it was trained on --> easier/likelier to generalize to unseen examples
-  - try splitting known data into a training set and a test set (before the "real" test set)
+  - try splitting known data into a training set and a test set (technically called the validation set, before the final "real" test set)
