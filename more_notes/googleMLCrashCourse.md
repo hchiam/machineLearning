@@ -157,7 +157,7 @@ batch_size = 2 # minibatches are faster than using all 12 examples per model upd
 learn_and_plot(features, labels, learning_rate, epochs, batch_size)
 ```
 
-<details>
+</details>
 
 [tf.keras linear regression with real data Colab](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/linear_regression_with_a_real_dataset.ipynb)
 
