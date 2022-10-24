@@ -271,4 +271,11 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   2. the distribution is stationary
   3. we get examples from the same distribution
 - remember the model is only getting samples of the true distribution (think like a scientist) - keep model as simple as possible so doesn't overfit to peculiarities of just what it was trained on --> easier/likelier to generalize to unseen examples
+
   - try splitting known data into a training set and a test set (technically called the validation set, before the final "real" test set)
+
+- [training set size > test set size (typically 80:20 split)](https://developers.google.com/machine-learning/crash-course/training-and-test-sets/splitting-data)
+  - expect test set performance to be similar but slightly worse than training perf
+  - make sure sample set is large enough to be statistically significant (rule of thumb I've found outside this course: n > 20, so >20 for training set and >20 for test set)
+  - make sure training set is representative and test set is representative (e.g. 50% winter 50% summer represented in both training set and test set)
+  - if test set performs surprisingly well or better than training set, check whether any test set data accidentally leaked into the training set
