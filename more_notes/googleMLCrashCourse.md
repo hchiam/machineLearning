@@ -282,5 +282,164 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - if test set performs surprisingly well or better than training set, check whether any test set data accidentally leaked into the training set
   - [it's dangerous to repeatedly tweak our hyperparameters based on results from the _same_ test set, because that causes us to implicitly fit to the particular test set](https://developers.google.com/machine-learning/crash-course/validation/check-your-intuition)
 
-- but rather prefer this: [training set ("params" / 1 model) --> validation set ("hyperparams" / best model) --> test set ("final" model)](https://developers.google.com/machine-learning/crash-course/validation/video-lecture) - to avoid overfitting to the validation set
+- but rather prefer this: [training set ("params" / 1 model) --> validation set (20%) ("hyperparams" / best model) --> test set ("final" model)](https://developers.google.com/machine-learning/crash-course/validation/video-lecture) - to avoid overfitting to the validation set
+
   - [practice training with validation sets + test sets](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/validation_and_test_sets.ipynb?hl=en)
+
+    - setup: (california_housing_train.csv --> `train_df` = training set, california_housing_test.csv --> `test_df` = test set)
+
+      <details>
+
+      <summary>Click to expand code</summary>
+
+      ```py
+      # Import modules
+      import numpy as np
+      import pandas as pd
+      import tensorflow as tf
+      from matplotlib import pyplot as plt
+
+      pd.options.display.max_rows = 10
+      pd.options.display.float_format = "{:.1f}".format
+
+      train_df = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_train.csv")
+
+      test_df = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_test.csv")
+
+      scale_factor = 1000.0
+
+      # Scale the training set's label.
+      train_df["median_house_value"] /= scale_factor
+
+      # Scale the test set's label
+      test_df["median_house_value"] /= scale_factor
+
+      def build_model(my_learning_rate):
+        """Create and compile a simple linear regression model."""
+        # Most simple tf.keras models are sequential.
+        model = tf.keras.models.Sequential()
+
+        # Add one linear layer to the model to yield a simple linear regressor.
+        model.add(tf.keras.layers.Dense(units=1, input_shape=(1,)))
+
+        # Compile the model topography into code that TensorFlow can efficiently
+        # execute. Configure training to minimize the model's mean squared error.
+        model.compile(optimizer=tf.keras.optimizers.RMSprop(lr=my_learning_rate),
+                      loss="mean_squared_error",
+                      metrics=[tf.keras.metrics.RootMeanSquaredError()])
+
+        return model
+
+
+      def train_model(model, df, feature, label, my_epochs,
+                      my_batch_size=None, my_validation_split=0.1):
+        """Feed a dataset into the model in order to train it."""
+
+        history = model.fit(x=df[feature],
+                            y=df[label],
+                            batch_size=my_batch_size,
+                            epochs=my_epochs,
+                            validation_split=my_validation_split)
+
+        # Gather the model's trained weight and bias.
+        trained_weight = model.get_weights()[0]
+        trained_bias = model.get_weights()[1]
+
+        # The list of epochs is stored separately from the
+        # rest of history.
+        epochs = history.epoch
+
+        # Isolate the root mean squared error for each epoch.
+        hist = pd.DataFrame(history.history)
+        rmse = hist["root_mean_squared_error"]
+
+        return epochs, rmse, history.history
+
+      print("Defined the build_model and train_model functions.")
+
+
+      def plot_the_loss_curve(epochs, mae_training, mae_validation):
+        """Plot a curve of loss vs. epoch."""
+
+        plt.figure()
+        plt.xlabel("Epoch")
+        plt.ylabel("Root Mean Squared Error")
+
+        plt.plot(epochs[1:], mae_training[1:], label="Training Loss")
+        plt.plot(epochs[1:], mae_validation[1:], label="Validation Loss")
+        plt.legend()
+
+        # We're not going to plot the first epoch, since the loss on the first epoch
+        # is often substantially greater than the loss for other epochs.
+        merged_mae_lists = mae_training[1:] + mae_validation[1:]
+        highest_loss = max(merged_mae_lists)
+        lowest_loss = min(merged_mae_lists)
+        delta = highest_loss - lowest_loss
+        print(delta)
+
+        top_of_y_axis = highest_loss + (delta * 0.05)
+        bottom_of_y_axis = lowest_loss - (delta * 0.05)
+
+        plt.ylim([bottom_of_y_axis, top_of_y_axis])
+        plt.show()
+
+      print("Defined the plot_the_loss_curve function.")
+      ```
+
+      </details>
+
+    - actually splitting out a validation set from the training data: (`validation_split = 0.2`)
+
+      <details>
+
+      <summary>Click to expand code</summary>
+
+      ```py
+      # The following variables are the hyperparameters.
+      learning_rate = 0.08
+      epochs = 30
+      batch_size = 100
+
+      # Split the original training set into a reduced training set and a
+      # validation set.
+      validation_split = 0.2
+
+      # Identify the feature and the label.
+      my_feature = "median_income"    # the median income on a specific city block.
+      my_label = "median_house_value" # the median house value on a specific city block.
+      # That is, you're going to create a model that predicts house value based
+      # solely on the neighborhood's median income.
+
+      # SHUFFLE THE TRAINING DATA BEFORE SPLITTING OUT A VALIDATION SET:
+      # shuffled_train_df = train_df.reindex(np.random.permutation(train_df.index))
+
+      # Invoke the functions to build and train the model.
+      my_model = build_model(learning_rate)
+      # SHOULD USE shuffled_train_df INSTEAD OF train_df DIRECTLY:
+      # epochs, rmse, history = train_model(my_model, shuffled_train_df, my_feature,
+      #                                     my_label, epochs, batch_size,
+      #                                     validation_split)
+      epochs, rmse, history = train_model(my_model, train_df, my_feature,
+                                          my_label, epochs, batch_size,
+                                          validation_split)
+
+      plot_the_loss_curve(epochs, history["root_mean_squared_error"],
+                          history["val_root_mean_squared_error"])
+      ```
+
+      </details>
+
+      - if training set loss curve is different from validation set loss curve, then the data in the two sets are different (i.e. aren't similar) - e.g. in the case of this Colab, running `train_df.head(n=1000)` reveals that the data was sorted by `longitude`, so the split isn't totally random and could be biased if longitude affects the relationship of `total_rooms` to `median_house_value` - you gotta shuffle the data!
+
+    - finally testing with the test set:
+
+      ```py
+      x_test = test_df[my_feature]
+      y_test = test_df[my_label]
+      results = my_model.evaluate(x_test, y_test, batch_size=batch_size)
+      ```
+
+      - the RMSE's should be similar:
+        - `root_mean_squared_error` (for training set) printed at the end of the last time you ran `train_model`
+        - `val_root_mean_squared_error` (for validation set) printed at the end of the last time you ran `train_model`
+        - `root_mean_squared_error` (for test set) printed by `my_model.evaluate`
