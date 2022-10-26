@@ -274,9 +274,13 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 
   - try splitting known data into a training set and a test set (technically called the validation set, before the final "real" test set)
 
-- [training set size > test set size (typically 80:20 split)](https://developers.google.com/machine-learning/crash-course/training-and-test-sets/splitting-data)
+- naively: [training set size > test set size (typically 80:20 split)](https://developers.google.com/machine-learning/crash-course/training-and-test-sets/splitting-data)
+
   - expect test set performance to be similar but slightly worse than training perf
   - make sure sample set is large enough to be statistically significant (rule of thumb I've found outside this course: n > 20, so >20 for training set and >20 for test set)
   - make sure training set is representative and test set is representative (e.g. 50% winter 50% summer represented in both training set and test set)
   - if test set performs surprisingly well or better than training set, check whether any test set data accidentally leaked into the training set
   - [it's dangerous to repeatedly tweak our hyperparameters based on results from the _same_ test set, because that causes us to implicitly fit to the particular test set](https://developers.google.com/machine-learning/crash-course/validation/check-your-intuition)
+
+- but rather prefer this: [training set ("params" / 1 model) --> validation set ("hyperparams" / best model) --> test set ("final" model)](https://developers.google.com/machine-learning/crash-course/validation/video-lecture)
+  - [practice training with validation sets + test sets](https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/validation_and_test_sets.ipynb?hl=en)
