@@ -443,3 +443,12 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
         - `root_mean_squared_error` (for training set) printed at the end of the last time you ran `train_model`
         - `val_root_mean_squared_error` (for validation set) printed at the end of the last time you ran `train_model`
         - `root_mean_squared_error` (for test set) printed by `my_model.evaluate`
+
+- tips for representing features well:
+  - number --> number
+  - string/name --> one-hot encodings (can be represented compactly)
+  - no magic values: don't use -1 to mean not available, instead add another param to indicate whether available, e.g. days_on_market_defined: 1.0
+  - aim for clear values for easier reasoning and debugging (e.g. age in years, not in seconds since Unix epoch)
+  - consider taking out extreme outliers that are verified to be incorrect
+  - consider the "binning trick" (range buckets) to map non-linearities without fancy tricks (use one-hot encoding), e.g. to group by range buckets of latitudes
+  - know your data: visualize, debug data (dashboard/duplicates/missing), monitor
