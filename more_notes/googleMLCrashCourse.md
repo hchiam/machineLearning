@@ -455,6 +455,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - consider clipping ("binning") outliers, e.g. all above 4.0 cap become treated as 4.0 (otherwise take out extreme outliers only if they are verified to be incorrect)
   - consider the "binning trick" (range buckets) to map non-linearities without fancy tricks (use one-hot encoding), e.g. to group by range buckets of latitudes, because we expect a **_NON_**-linear relationship between latitude and housing prices.
     - binning enables learning different weights per latitude group
+    - bins can be by whole numbers, or handle outliers with bins by quantile of the data
   - know your data: visualize, debug data (dashboard/duplicates/missing), monitor
 
 - why scale features: scaling features to use similar scales helps gradient descent converge faster, helps avoid the "NaN trap" (what I call "math imprecision propagation"), and helps avoid having the model focus too much on features simply because they happen have a significantly wider range in the raw data
