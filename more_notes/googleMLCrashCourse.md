@@ -452,7 +452,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - string/name --> one-hot encodings (can be represented compactly with [sparse representation](https://developers.google.com/machine-learning/glossary#sparse_representation) if needed: just a number for the position of where the one-hot encoding would be, but convert back to one-hot representation for training)
   - no magic values: don't use -1 to mean not available, instead add another param to indicate whether available, e.g. days_on_market_defined: 1.0
   - aim for clear values for easier reasoning and debugging (e.g. age in years, not in seconds since Unix epoch)
-  - consider taking out extreme outliers that are verified to be incorrect, or clipping ("binning") outliers, e.g. all above 4.0 cap become treated as 4.0
+  - consider clipping ("binning") outliers, e.g. all above 4.0 cap become treated as 4.0 (otherwise take out extreme outliers only if they are verified to be incorrect)
   - consider the "binning trick" (range buckets) to map non-linearities without fancy tricks (use one-hot encoding), e.g. to group by range buckets of latitudes, because we expect a **_NON_**-linear relationship between latitude and housing prices.
   - know your data: visualize, debug data (dashboard/duplicates/missing), monitor
 
