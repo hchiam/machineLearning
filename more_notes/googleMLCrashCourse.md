@@ -447,6 +447,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
         - `root_mean_squared_error` (for test set) printed by `my_model.evaluate`
 
 - tips for representing features well: (so that you can multiply by model weights)
+
   - number --> number
   - string/name --> one-hot encodings (can be represented compactly with [sparse representation](https://developers.google.com/machine-learning/glossary#sparse_representation) if needed: just a number for the position of where the one-hot encoding would be, but convert back to one-hot representation for training)
   - no magic values: don't use -1 to mean not available, instead add another param to indicate whether available, e.g. days_on_market_defined: 1.0
@@ -454,3 +455,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - consider taking out extreme outliers that are verified to be incorrect
   - consider the "binning trick" (range buckets) to map non-linearities without fancy tricks (use one-hot encoding), e.g. to group by range buckets of latitudes
   - know your data: visualize, debug data (dashboard/duplicates/missing), monitor
+
+- why scale features: scaling features to use similar scales helps gradient descent converge faster, helps avoid the "NaN trap" (what I call "math imprecision propagation"), and helps avoid having the model focus too much on features simply because they happen have a significantly wider range in the raw data
+
+- you don't have to scale to exactly the same range: -1/+1 is similar enough to -3/+3 but is significantly overshadowed by 5000/100000
