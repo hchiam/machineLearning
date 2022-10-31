@@ -457,6 +457,9 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
     - binning enables learning different weights per latitude group
     - bins can be by whole numbers, or handle outliers with bins by quantile of the data
   - know your data: visualize, debug data (dashboard/duplicates/missing), monitor
+    - think about what you'd expect the data to look like and see if it matches
+    - if it doesn't match, see if you can explain why it doesn't match what you'd expect
+    - double-check that the data agrees with other data sources
   - remove legitimately bad data: entry with missing data, duplicate entry, incorrect entry label, incorrect entry value (tip: generate most common values lists to see if they make sense, like does the most common language make sense)
 
 - why scale features: scaling features to use similar scales helps gradient descent converge faster, helps avoid the "NaN trap" (what I call "math imprecision propagation"), and helps avoid having the model focus too much on features simply because they happen have a significantly wider range in the raw data
