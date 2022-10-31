@@ -6,7 +6,7 @@ These are notes more for my own reminders and active learning, not a summary of 
 
 - learning from _**EXAMPLES**_ (inputs/features) to _**predict**_ (outputs/inferences) like a _**scientist**_ (observations & stats)
 
-- traditional programming: code; --> ML projects: representation/modeling features
+- traditional programming: code; --> ML projects: representing/modeling features
 
 - reminder-to-self:
 
