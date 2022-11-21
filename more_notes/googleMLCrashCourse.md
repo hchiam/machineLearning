@@ -474,3 +474,4 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - e.g.: country:usa AND language:spanish
   - e.g.: satisfaction <-- dog behaviour type X time of day
   - --> similar to **neural nets** = more complex/intense/black-box but more powerful
+  - https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/representation_with_a_feature_cross.ipynb?hl=en
