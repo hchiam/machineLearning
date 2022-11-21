@@ -467,6 +467,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 - you don't have to scale to exactly the same range: -1/+1 is similar enough to -3/+3 but is significantly overshadowed by 5000/100000
 
 - **feature crosses** are a simple way to let you find or represent patterns that can't be done with linear y = b + w1 x1 + w2 x2, for example a XOR-like 2D map of x1 and x2 can be captured with y = b + w1 x1 + w2 x2 + w3 x3 where x3 = x1 x2.
+
   - e.g.: x3 = x1 x2
   - e.g.: adding x1^2 and x2^2 terms can let you create a circle
   - e.g.: cost of 3 rooms at one city latitude (real-world locations have 2 dimensions! = feature cross of (_binned_) latitude and longitude, or consider postal code) >> 3 rooms at another city latitude
@@ -476,3 +477,5 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - --> similar to **neural nets** = more complex/intense/black-box but more powerful
   - colab: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/representation_with_a_feature_cross.ipynb?hl=en
   - check your understanding: https://developers.google.com/machine-learning/crash-course/feature-crosses/check-your-understanding
+
+- **regularization** = penalizing model complexity
