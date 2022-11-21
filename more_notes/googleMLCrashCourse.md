@@ -482,4 +482,4 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - `complexity(model)` = ? prefer smaller weights?
     - in L2 regularization (AKA ridge): `complexity(model)` = `coefficient * sum(squares(weights))`.
       - so `loss` = `loss(data|model) + coefficient * sum(squares(weights))`
-      - Recommended: large `coefficient` for smaller data sets or when test and validation sets are different.
+      - Recommended: large `coefficient` for smaller training data sets or when training and test sets look very different.
