@@ -470,4 +470,6 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - e.g.: x3 = x1 x2
   - e.g.: cost of 3 rooms at one city latitude >> 3 rooms at another city latitude
   - e.g.: tic-tac-toe sequence info >> tic-tac-toe position info
-  - --> similar to **neural nets** = more complex but more powerful
+  - e.g.: country:usa AND language:spanish
+  - e.g.: satisfaction <-- dog behaviour type X time of day
+  - --> similar to **neural nets** = more complex/intense/black-box but more powerful
