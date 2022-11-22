@@ -20,6 +20,7 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 5. regression / logistic regression = "logistic model"
    - classification for categorical variable, regression for continuous variable
    - but logistic regression is used for classification because it actually outputs a continuous probability number output (stats analysis: continuous value, but ML goal: final classification output)
+   - (btw: calibrated to 0-1 range for probability)
 
 ## so-called "models"
 

@@ -479,7 +479,14 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - check your understanding: https://developers.google.com/machine-learning/crash-course/feature-crosses/check-your-understanding
 
 - **regularization** = penalizing model complexity (this is a better way to avoid overfitting i.e. improve model generalizability than setting some hard-to-do-in-practice "early stopping" point)
+
   - `complexity(model)` = one way is to prefer smaller weights:
     - in L2 regularization (AKA ridge): `complexity(model)` = `coefficient * sum(squares(weights))`.
       - so `loss` = `minimize( loss(data|model) + coefficient * sum(squares(weights)) )`
       - Recommended: large `coefficient` for smaller training data sets or when training and test sets look very different.
+
+- **logistic regression**: output calibrated to 0-1 range (exclusive) for probability
+  - can be implemented with sigmoid
+  - loss can't use mean_squared_error but rather LogLoss
+  - regularization (see notes above) is very important for logistic regression
+  - **_linear_ logistic regression** is very fast and _non-linear_ features can be extracted with feature crosses (see notes above)
