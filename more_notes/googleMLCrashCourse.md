@@ -488,6 +488,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
       - Recommended: large `coefficient` for smaller training data sets or when training and test sets look very different.
 
 - **logistic regression**: generates probabilities output calibrated to 0-1 range (exclusive) for probability
+
   - can be implemented with sigmoid of the output to keep it between 0-1 = 0%-100%.
     - y' = 1 / (1+e^-z),
     - where z = b + w1 x1 + w2 x2 + ... wN xN.
@@ -500,3 +501,16 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
     - (see notes above for L2 regularization)
     - (see notes below for L1 regularization)
   - **_linear_ logistic regression** is very fast and _non-linear_ features can be extracted with feature crosses (see notes above)
+
+- accuracy of 99% may not be good enough - you can get 99% by naively always saying one thing
+- **precision** = true positives / all predicted positives
+  - _intuition:_ precision = how much of the time was it reliably "crying wolf"?
+  - _mnemonic:_ "p is for prophecy proven-ness"
+  - _tends to:_ predict "wolf" only when absolutely sure beyond reasonable doubt
+- **recall** = true positives / all actual positives whether predicted or not
+  - _intuition:_ recall = how much of the actual "wolves" did it detect?
+  - _mnemonic:_ "recall? wreck all? reckon all? recognize all?"
+  - _tends to:_ predict a "wolf" any time hear the "bushes" move
+- **precision** and **recall** are often at odds with each other
+- **precision** and **recall** often need to be balanced
+- ask for both **precision** and **recall** of a model to evaluate a model
