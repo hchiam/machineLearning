@@ -487,7 +487,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
       - so `loss` = `minimize( loss(data|model) + coefficient * sum(squares(weights)) )`
       - Recommended: large `coefficient` for smaller training data sets or when training and test sets look very different.
 
-- **logistic regression**: output calibrated to 0-1 range (exclusive) for probability
+- **logistic regression**: generates probabilities output calibrated to 0-1 range (exclusive) for probability
   - can be implemented with sigmoid of the output to keep it between 0-1 = 0%-100%.
     - y' = 1 / (1+e^-z),
     - where z = b + w1 x1 + w2 x2 + ... wN xN.
@@ -496,7 +496,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
       - where x are features,
       - where y is label output is either 0 or 1, and
       - where y' is the predicted value between 0-1.
-  - regularization (see notes above) is very important for logistic regression
+  - **_to avoid overfitting with +/- infinity weights, logistic regression must use regularization_** (see notes above for regularization definition)
     - (see notes above for L2 regularization)
     - (see notes below for L1 regularization)
   - **_linear_ logistic regression** is very fast and _non-linear_ features can be extracted with feature crosses (see notes above)
