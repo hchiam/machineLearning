@@ -521,4 +521,4 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 
 - **prediction bias** = when average prediction !== average observation --> something's wrong (incomplete feature set, biased training sample, buggy pipeline, etc.)
   - prediction bias is a good debug/sanity check
-  - but if there's no prediction bias, there may still be problems with the model
+  - but if there's no prediction bias, there may still be problems with the model - test the model against other metrics
