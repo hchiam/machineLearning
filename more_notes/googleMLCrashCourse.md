@@ -497,4 +497,6 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
       - where y is label output is either 0 or 1, and
       - where y' is the predicted value between 0-1.
   - regularization (see notes above) is very important for logistic regression
+    - (see notes above for L2 regularization)
+    - (see notes below for L1 regularization)
   - **_linear_ logistic regression** is very fast and _non-linear_ features can be extracted with feature crosses (see notes above)
