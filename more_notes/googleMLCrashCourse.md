@@ -514,3 +514,5 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 - **precision** and **recall** are often at odds with each other
 - **precision** and **recall** often need to be balanced
 - ask for both **precision** and **recall** of a model to evaluate a model
+- **ROC Curve** = graph of True Positive rates (y-axis) and False Positive rates (x-axis) at a bunch of decision threshold values (think spam probability threshold values)
+  - **AUC** = area under that ^ ROC curve = probability that the model correctly assigns a higher probability to a random actually-positive example than it does to a random actually-negative example.
