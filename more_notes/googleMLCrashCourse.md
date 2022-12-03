@@ -503,14 +503,16 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - **_linear_ logistic regression** is very fast and _non-linear_ features can be extracted with feature crosses (see notes above)
 
 - accuracy of 99% may not be good enough - you can get 99% by naively always saying one thing
-- **precision** = true positives / all predicted positives
+- **precision** = true positives / all predicted positives:
   - _intuition:_ precision = how much of the time was it reliably "crying wolf"?
   - _mnemonic:_ "p is for prophecy proven-ness"
-  - _tends to:_ predict "wolf" only when absolutely sure beyond reasonable doubt
-- **recall** = true positives / all actual positives whether predicted or not
+  - _tends to:_ predict "wolf" only when absolutely sure beyond reasonable doubt.
+  - _unhelpful extreme:_ never cry "wolf", and none of your predictions are disputable, because you made no predictions of positives.
+- **recall** = true positives / all actual positives whether predicted or not:
   - _intuition:_ recall = how much of the actual "wolves" did it detect?
   - _mnemonic:_ "recall? wreck all? reckon all? recognize all?"
-  - _tends to:_ predict a "wolf" any time hear the "bushes" move
+  - _tends to:_ predict a "wolf" any time hear the "bushes" move.
+  - _unhelpful extreme:_ always cry "wolf", and you'll catch all the "wolves".
 - **precision** and **recall** are often at odds with each other
 - **precision** and **recall** often need to be balanced
 - ask for both **precision** and **recall** of a model to evaluate a model
