@@ -506,6 +506,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 - **accuracy** = correct predictions (+ve and -ve) / all predictions (+ve and -ve).
   - accuracy can be misleading because you sometimes actually care about _precision_ or _recall_ or both:
   - _mnemonic:_ "a is for all, not just the positive ones" (vs precision).
+  - Practice Accuracy vs Precision vs Recall: https://developers.google.com/machine-learning/crash-course/classification/check-your-understanding-accuracy-precision-recall
 - **precision** = true positives / all predicted positives:
   - _intuition:_ precision = how much of the time was it reliably "crying wolf"?
   - _mnemonic:_ "p is for prophecy proven-ness".
