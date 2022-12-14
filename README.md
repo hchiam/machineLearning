@@ -109,6 +109,12 @@ https://github.com/hchiam/crash-course-ai-labs
 
 https://github.com/hchiam/learning-automl
 
+## Keep up to date:
+
+https://www.youtube.com/@TwoMinutePapers
+
+https://www.youtube.com/@twimlai - hear about things like AI-GAs, Quality-Diversity algorithms, jailbreaking, filters, adversarial training, pre-training, and more.
+
 ## Links to more:
 
 https://github.com/hchiam/learning-ml
