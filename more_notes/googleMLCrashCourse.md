@@ -504,7 +504,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 
 - accuracy of 99% may not be good enough - you can get 99% by naively always saying one thing
 - **accuracy** = correct predictions (+ve and -ve) / all predictions (+ve and -ve).
-  - accuracy can be misleading because you sometimes actually care about _precision_ or _recall_ or both:
+  - accuracy can be misleading because you sometimes actually care about _precision_ or _recall_ or both, especially _when there's an imbalance of positive/negative cases_:
   - _mnemonic:_ "a is for all, not just the positive ones" (vs precision).
   - Practice Accuracy vs Precision vs Recall: https://developers.google.com/machine-learning/crash-course/classification/check-your-understanding-accuracy-precision-recall
 - **precision** = true positives / all predicted positives:
