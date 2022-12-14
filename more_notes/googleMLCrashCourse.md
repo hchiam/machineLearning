@@ -528,5 +528,12 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - **AUC** = area under that ^ ROC curve = probability that the model correctly assigns a higher probability to a random actually-positive example than it does to a random actually-negative example.
 
 - **prediction bias** = when average prediction !== average observation --> something's wrong (incomplete feature set, biased training sample, buggy pipeline, etc.)
+
   - prediction bias is a good debug/sanity check
   - but if there's no prediction bias, there may still be problems with the model - test the model against other metrics
+
+- binary classification colab: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/binary_classification.ipynb?hl=en
+
+  - convert regression (continuous number) into classification (0/1) with threshold.
+
+- you can normalize datasets with feature ranges in very different ranges (e.g. 500-100000 vs 2-12) by turning numbers into Z-scores (i.e. number of standard deviations from mean = (original value - mean) / standard deviation).
