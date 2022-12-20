@@ -479,6 +479,10 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - --> similar to **neural nets** = more complex/intense/black-box but more powerful
   - colab: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/representation_with_a_feature_cross.ipynb?hl=en
   - check your understanding: https://developers.google.com/machine-learning/crash-course/feature-crosses/check-your-understanding
+  - **caveat**: sparse feature crosses can be bad and unhelpful, e.g. search query words crossed with unique videos = model memory size explosion and extra noisy coefficients causing overfitting
+    - fix with **L0** regularization = penalize non-zero weights --> but NP-hard problem to solve, hard to optimize (non-convex).
+    - fix with **L1** regularization = relaxed version of L0: penalize `sum(abs(weights))` --> easier to optimize (convex), encourages sparsity, unlike L2.
+    - **L2** regularization = penalize `... * sum(squares(weights))` (details below). --> "squeezes" the weights towards zero, but won't actually "squash" them down to zero.
 
 - **regularization** = penalizing model complexity (this is a better way to avoid overfitting i.e. improve model generalizability than setting some hard-to-do-in-practice "early stopping" point)
 
