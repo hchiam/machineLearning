@@ -483,6 +483,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
     - ❌ fix with **L0** regularization = penalize `count(non-zero weights)` --> but NP-hard problem to solve, hard to optimize (non-convex).
     - ✅ fix with **L1** regularization = relaxed version of L0: penalize `sum(abs(weights))` (and set weight = 0 when weight < 0) --> easier to optimize (convex), encourages sparsity, unlike L2.
     - ❌ fix with **L2** regularization = penalize `sum(squares(weights))` (details below). --> "squeezes" the weights towards zero, but won't actually "squash" them down to zero.
+    - https://developers.google.com/machine-learning/crash-course/regularization-for-sparsity/check-your-understanding
 
 - **regularization** = penalizing model complexity (this is a better way to avoid overfitting i.e. improve model generalizability than setting some hard-to-do-in-practice "early stopping" point)
 
