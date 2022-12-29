@@ -481,7 +481,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - check your understanding: https://developers.google.com/machine-learning/crash-course/feature-crosses/check-your-understanding
   - **caveat**: sparse feature crosses can be bad and unhelpful, e.g. search query words crossed with unique videos = model memory size explosion and extra noisy coefficients causing overfitting --> fix by making weights 0 with regularization (see notes below):
     - ❌ fix with **L0** regularization = penalize `count(non-zero weights)` --> but NP-hard problem to solve, hard to optimize (non-convex).
-    - ✅ fix with **L1** regularization = relaxed version of L0: penalize `sum(abs(weights))` (and set weight = 0 when weight < 0) --> easier to optimize (convex), encourages sparsity, unlike L2.
+    - ✅ fix with **L1** regularization = relaxed version of L0: penalize `sum(abs(weights))` (and set weight = 0 when weight < 0) --> easier to optimize (convex), encourages sparsity, unlike L2. One downside of L1 regularization is it may also set weights to 0 for some informative features (features that are not non-informative but still weakly informative, or strongly informative on different scales, or strongly informative but strongly correlated to other similarly informative features)
     - ❌ fix with **L2** regularization = penalize `sum(squares(weights))` (details below). --> "squeezes" the weights towards zero, but won't actually "squash" them down to zero.
     - https://developers.google.com/machine-learning/crash-course/regularization-for-sparsity/check-your-understanding
 
