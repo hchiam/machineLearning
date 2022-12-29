@@ -476,7 +476,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - e.g.: tic-tac-toe sequence info >> tic-tac-toe position info
   - e.g.: country:usa AND language:spanish
   - e.g.: satisfaction <-- dog behaviour type X time of day
-  - --> similar to **neural nets** = more complex/intense/black-box but more powerful (requires non-linear outputs from each neuron/node in order to produce non-linear output functions, the simplest being **ReLU**: **Re**ctified **L**inear **U**nit activation function)
+  - --> similar to **neural nets** = more complex/intense/black-box but more powerful (requires non-linear outputs from each neuron/node in order to produce non-linear output functions, the simplest being **ReLU**: **Re**ctified **L**inear **U**nit activation function = `max(0,x)`)
   - colab: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/representation_with_a_feature_cross.ipynb?hl=en
   - check your understanding: https://developers.google.com/machine-learning/crash-course/feature-crosses/check-your-understanding
   - **caveat**: sparse feature crosses can be bad and unhelpful, e.g. search query words crossed with unique videos = model memory size explosion and extra noisy coefficients causing overfitting --> fix by making weights 0 with regularization (see notes below):
