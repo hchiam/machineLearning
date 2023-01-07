@@ -578,3 +578,6 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - Embeddings are supposed to reduce dimensions (compared to your "vocab" size). A good rule of thumb for **number of dimensions for embeddings** = `4th_root(possible values like vocab size)`, but then validate and try it out for your use case.
   - embeddings can also be used to define and find similarity between diverse data types! (e.g. text, images, audio, etc.)
   - example embedding techniques: **PCA** to reduce dimensions, **word2vec** to map word similarity by their neighbouring words, 
+
+- **production ML systems**: more than just the ML model itself, things like data collection and data verification, deployment, static-offline/dynamic-online training, static-offline/dynamic-online inference, fairness/bias, etc.: https://developers.google.com/machine-learning/crash-course/production-ml-systems
+  - static-offline vs dyanmic-online: simple but stale vs adapts but complex and must be able to monitor/rollback/quarantine/etc.
