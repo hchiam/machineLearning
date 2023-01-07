@@ -569,3 +569,11 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - multi-class, multi-label classification = can be/have multiple classes: use one logistic regression loss for each possible class
   - note: when there's a lot of output classes to train for, consider an efficient strategy "Candidate Sampling" of calculating for all positive labels, but only a random sample of negatives
   - example colab for multi-class classification: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/multi-class_classification_with_MNIST.ipynb
+
+- **embeddings** build on the previous notes: each output neuron outputs a decimal number that can be used as a position along one "dimension", with the output layer of those neurons together producing a multi-dimensional vector representing an item in latent space (an embedding), which can then be compared to other embeddings to do interesting things like finding similarity
+  - e.g. similarity of movies based on movies watched by users
+  - e.g. similarity of sentences with same meaning but using different words
+  - e.g. some multi-dimensional representation of numbers that are the same but are written differently
+    - (raw image bitmap -> sparse vector encoding -> n-dimensional embedding) + (other features) -> (extra hidden layers) -> (logit layer of exclusive probabilities for digits 0-9) -> (softmax loss: logit output layer versus one-hot target class label)
+  - good rule of thumb for **number of dimensions for embeddings** = `4th_root(possible values)`, but then validate and try it out for your use case
+  - embeddings can also be used to define and find similarity between diverse data types! (e.g. text, images, audio, etc.)
