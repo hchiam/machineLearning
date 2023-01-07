@@ -584,7 +584,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - _data dependencies:_ minimal sources of data, input data availability, input data format versioning, ROI of extra input data, input data correlation, input data feedback loops (is the input data affected by the model's output, like stock market and social impact)
   - _bias:_ 
     - examples of cognitive bias affecting ML models: https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias
-    - 3 flags you can check for in data: (missing, unexpected, skew (map it!)) https://developers.google.com/machine-learning/crash-course/fairness/identifying-bias
+    - 3+1 flags you can check for in data: (missing, unexpected, skew (map it!)) https://developers.google.com/machine-learning/crash-course/fairness/identifying-bias + (confusion matrix of true/false positives/negatives, then confusion matrix true/false positives/negatives per demographic group) https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias
   - (and more things to consider) but thankfully many of the other pieces to production ML systems already have existing solutions you can re-use
   - check your understanding:
     - https://developers.google.com/machine-learning/crash-course/static-vs-dynamic-training/check-your-understanding
