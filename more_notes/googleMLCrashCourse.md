@@ -485,6 +485,8 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
     - ❌ fix with **L2** regularization = penalize `sum(squares(weights))` (details below). --> "squeezes" the weights towards zero, but won't actually "squash" them down to zero.
     - https://developers.google.com/machine-learning/crash-course/regularization-for-sparsity/check-your-understanding
 
+- **dropout regularization** = randomly drop units in a network for a single gradient step, usually somewhere between 0% and 100% (see regularization definition notes below)
+
 - **regularization** = penalizing model complexity (this is a better way to avoid overfitting i.e. improve model generalizability than setting some hard-to-do-in-practice "early stopping" point)
 
   - `complexity(model)` = one way is to prefer smaller weights:
