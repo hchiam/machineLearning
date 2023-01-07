@@ -562,3 +562,9 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - backpropagation **vanishing gradients**? consider **ReLU** activation functions to avoid constantly multiplying smaller and smaller numbers down to 0.
   - backpropagation **ReLU** outputs stuck at 0? consider lowering the **learning rate**.
   - or consider **dropout regularization** (see note earlier above)
+
+- multi-class neural network = 1 output node per class:
+  - one-vs-all: sigmoid output or softmax to require all outputs to sum up to 1 (100%)
+  - multi-class, single-label classification = can only be of one class: use one softmax loss for all possible classes
+  - multi-class, multi-label classification = can be/have multiple classes: use one logistic regression loss for each possible class
+  - note: for softmax, consider an efficient strategy "Candidate Sampling" of calculating for all positive labels, but only a random sample of negatives
