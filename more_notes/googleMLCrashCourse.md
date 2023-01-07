@@ -556,3 +556,9 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - train model
 
 - visual explanation of **backpropagation** (just scroll): https://developers-dot-devsite-v2-prod.appspot.com/machine-learning/crash-course/backprop-scroll
+
+- backpropagation debugging:
+  - backpropagation **exploding gradients**? consider **batch normalization** (or lowering the **learning rate**) by normalizing a layer's outputs before passing on to the next layer.
+  - backpropagation **vanishing gradients**? consider **ReLU** activation functions to avoid constantly multiplying smaller and smaller numbers down to 0.
+  - backpropagation **ReLU** outputs stuck at 0? consider lowering the **learning rate**.
+  - or consider **dropout regularization** (see note earlier above)
