@@ -585,6 +585,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - _bias:_ 
     - examples of cognitive bias affecting ML models: https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias
     - 3+1 flags you can check for in data: (missing, unexpected, skew (map it!)) https://developers.google.com/machine-learning/crash-course/fairness/identifying-bias + (confusion matrix of true/false positives/negatives, then confusion matrix true/false positives/negatives per demographic group) https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias
+    - fairness colab: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/intro_to_ml_fairness.ipynb
   - (and more things to consider) but thankfully many of the other pieces to production ML systems already have existing solutions you can re-use
   - check your understanding:
     - https://developers.google.com/machine-learning/crash-course/static-vs-dynamic-training/check-your-understanding
