@@ -539,13 +539,13 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - prediction bias is a good debug/sanity check
   - but if there's no prediction bias, there may still be problems with the model - test the model against other metrics
 
-- **binary classification colab**: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/binary_classification.ipynb?hl=en
+- **binary classification colab**: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/binary_classification.ipynb
 
   - **convert regression (continuous number) into classification (0/1) with threshold.**
 
 - you can normalize datasets with feature ranges in very different ranges (e.g. 500-100000 vs 2-12) by turning numbers into Z-scores (i.e. number of standard deviations from mean = (original value - mean) / standard deviation).
 
-- **python code for a simple neural net and a deep neural net**: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/intro_to_neural_nets.ipynb?hl=en#scrollTo=JZlvdpyYKx7V
+- **python code for a simple neural net and a deep neural net**: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/intro_to_neural_nets.ipynb
 
   - import modules
   - load dataset
@@ -568,3 +568,4 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - multi-class, single-label classification = can only be of one class: use one softmax loss for all possible classes
   - multi-class, multi-label classification = can be/have multiple classes: use one logistic regression loss for each possible class
   - note: when there's a lot of output classes to train for, consider an efficient strategy "Candidate Sampling" of calculating for all positive labels, but only a random sample of negatives
+  - example colab for multi-class classification: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/multi-class_classification_with_MNIST.ipynb
