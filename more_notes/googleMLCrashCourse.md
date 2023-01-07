@@ -581,3 +581,8 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 
 - **production ML systems**: more than just the ML model itself, things like data collection and data verification, deployment, static-offline/dynamic-online training, static-offline/dynamic-online inference, fairness/bias, etc.: https://developers.google.com/machine-learning/crash-course/production-ml-systems
   - static-offline vs dyanmic-online: simple but stale vs adapts but complex and must be able to monitor/rollback/quarantine/etc.
+  - check your understanding:
+    - https://developers.google.com/machine-learning/crash-course/static-vs-dynamic-training/check-your-understanding
+    - https://developers.google.com/machine-learning/crash-course/static-vs-dynamic-inference/check-your-understanding
+    - https://developers.google.com/machine-learning/crash-course/data-dependencies/check-your-understanding
+    - https://developers.google.com/machine-learning/crash-course/fairness/check-your-understanding
