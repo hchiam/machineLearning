@@ -544,6 +544,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 - you can normalize datasets with feature ranges in very different ranges (e.g. 500-100000 vs 2-12) by turning numbers into Z-scores (i.e. number of standard deviations from mean = (original value - mean) / standard deviation).
 
 - python code for a simple neural net and a deep neural net: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/intro_to_neural_nets.ipynb?hl=en#scrollTo=JZlvdpyYKx7V
+
   - import modules
   - load dataset
   - normalize values (features roughly same range)
@@ -551,3 +552,5 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - plot
   - create model (add regularization as needed in the last code section of the colab)
   - train model
+
+- visual explanation of backpropagation (just scroll): https://developers-dot-devsite-v2-prod.appspot.com/machine-learning/crash-course/backprop-scroll
