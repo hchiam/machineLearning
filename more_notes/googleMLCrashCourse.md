@@ -10,6 +10,9 @@ These are notes more for my own reminders and active learning, not a summary of 
 
 - traditional programming: code; --> ML projects: representing/modeling features
 
+- (rules + data) -> traditional programming -> (answers)
+- (answers + data) -> machine learning -> (rules)
+
 - reminder-to-self:
 
   - regression = continuous value predictions (e.g. price, probability)
@@ -558,31 +561,35 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 - visual explanation of **backpropagation** (just scroll): https://developers-dot-devsite-v2-prod.appspot.com/machine-learning/crash-course/backprop-scroll
 
 - backpropagation debugging:
+
   - backpropagation **exploding gradients**? consider **batch normalization** (or lowering the **learning rate**) by normalizing a layer's outputs before passing on to the next layer.
   - backpropagation **vanishing gradients**? consider **ReLU** activation functions to avoid constantly multiplying smaller and smaller numbers down to 0.
   - backpropagation **ReLU** outputs stuck at 0? consider lowering the **learning rate**.
   - or consider **dropout regularization** (see note earlier above)
 
 - multi-class neural network = 1 output node per class:
+
   - one-vs-all: sigmoid output or softmax to require all outputs to sum up to 1 (100%)
   - multi-class, single-label classification = can only be of one class: use one softmax loss for all possible classes
   - multi-class, multi-label classification = can be/have multiple classes: use one logistic regression loss for each possible class
   - note: when there's a lot of output classes to train for, consider an efficient strategy "Candidate Sampling" of calculating for all positive labels, but only a random sample of negatives
   - example colab for multi-class classification: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/multi-class_classification_with_MNIST.ipynb
 
-- **embeddings** build on the previous notes. Each output neuron outputs a decimal number that can be used as a position along one "dimension", with the output layer of those neurons together producing a multi-dimensional vector representing an item in latent space (an embedding), which can then be compared to other embeddings to do interesting things like finding similarity. The output of those embedding representation neurons can then be fed into further neurons for further processing, like recommending similar items. 
+- **embeddings** build on the previous notes. Each output neuron outputs a decimal number that can be used as a position along one "dimension", with the output layer of those neurons together producing a multi-dimensional vector representing an item in latent space (an embedding), which can then be compared to other embeddings to do interesting things like finding similarity. The output of those embedding representation neurons can then be fed into further neurons for further processing, like recommending similar items.
+
   - e.g. similarity of movies based on movies watched by users (train the bigger neural network by randomly using some of the movies watched as positive labels)
   - e.g. similarity of sentences with same meaning but using different words
   - e.g. some multi-dimensional representation of numbers that are the same but are written differently
     - (raw image bitmap -> sparse vector encoding like [1,3,999] instead of a huge bit array vector with lots of 0's -> n-dimensional embedding) + (other features) -> (extra hidden layers) -> (logit layer of exclusive probabilities for digits 0-9) -> (softmax loss: logit output layer versus one-hot target class label)
   - Embeddings are supposed to reduce dimensions (compared to your "vocab" size). A good rule of thumb for **number of dimensions for embeddings** = `4th_root(possible values like vocab size)`, but then validate and try it out for your use case.
   - embeddings can also be used to define and find similarity between diverse data types! (e.g. text, images, audio, etc.)
-  - example embedding techniques: **PCA** to reduce dimensions, **word2vec** to map word similarity by their neighbouring words, 
+  - example embedding techniques: **PCA** to reduce dimensions, **word2vec** to map word similarity by their neighbouring words,
 
 - **production ML systems**: more than just the ML model itself, things like data collection and data verification, deployment, static-offline/dynamic-online training, static-offline/dynamic-online inference, fairness/bias, etc.: https://developers.google.com/machine-learning/crash-course/production-ml-systems
+
   - _static-offline vs dynamic-online:_ simple and easier-to-verify but stale (but still monitor in case of seasonality/etc.) vs adapts but complex and must be able to monitor/rollback/quarantine/etc.
   - _data dependencies:_ minimal sources of data, input data availability, input data format versioning, ROI of extra input data, input data correlation, input data feedback loops (is the input data affected by the model's output, like stock market and social impact)
-  - _bias:_ 
+  - _bias:_
     - examples of cognitive bias affecting ML models: https://developers.google.com/machine-learning/crash-course/fairness/types-of-bias
     - 3+1 flags you can check for in data: (missing, unexpected, skew (map it!)) https://developers.google.com/machine-learning/crash-course/fairness/identifying-bias + (confusion matrix of true/false positives/negatives, then confusion matrix true/false positives/negatives per demographic group) https://developers.google.com/machine-learning/crash-course/fairness/evaluating-for-bias
     - fairness colab: https://colab.research.google.com/github/google/eng-edu/blob/main/ml/cc/exercises/intro_to_ml_fairness.ipynb
@@ -592,3 +599,6 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
     - https://developers.google.com/machine-learning/crash-course/static-vs-dynamic-inference/check-your-understanding
     - https://developers.google.com/machine-learning/crash-course/data-dependencies/check-your-understanding
     - https://developers.google.com/machine-learning/crash-course/fairness/check-your-understanding
+
+- discover more colabs/notebooks at https://research.google.com/seedbank like [neural style transfer](https://aihub.cloud.google.com/p/products%2F7f7495dd-6f66-4f8a-8c30-15f211ad6957)
+- discover more built-in 3rd party colab code snippets with the `< >` icon to open a search box to find things like 3rd-party visualizations
