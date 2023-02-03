@@ -20,3 +20,5 @@
 
 - Policy Gradient learning = even more realistic than TD methods because the action space is no longer discrete (but requires more computing power) and can even behave probabilistically. It's also more intuitive than TD methods because you learn the optimal policy directly (policy-based method) without needing to track a separate action-value function estimate (value-based method).
   - estimate the gradient of return by sampling episodes
+
+- google [CIRL reinforcement learning in ML](https://www.google.com/search?q=cirl+reinforcement+learning+in+ml)
