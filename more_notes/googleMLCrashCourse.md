@@ -604,6 +604,8 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 - discover more colabs/notebooks at https://research.google.com/seedbank like [neural style transfer](https://aihub.cloud.google.com/p/products%2F7f7495dd-6f66-4f8a-8c30-15f211ad6957)
 - discover more built-in 3rd party colab code snippets with the `< >` icon to open a search box to find things like 3rd-party visualizations
 
+- read "rules of ML" to learn from others' experiences/mistakes: https://developers.google.com/machine-learning/guides/rules-of-ml
+
 ## practice real-life usage
 
 https://github.com/hchiam/learning-tensorflow/tree/master/my_coursera_notes
