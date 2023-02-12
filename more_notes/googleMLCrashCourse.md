@@ -605,6 +605,7 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 - discover more built-in 3rd party colab code snippets with the `< >` icon to open a search box to find things like 3rd-party visualizations
 
 - read "rules of ML" to learn from others' experiences/mistakes: https://developers.google.com/machine-learning/guides/rules-of-ml
+  - bookmarklet to pick a random ML tip to review: https://github.com/hchiam/learning-js/blob/main/bookmarklets/random-ml-tip-from-page.js
 
 ## practice real-life usage
 
