@@ -35,7 +35,7 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 
 1. learning rate = "step size" (for ϵ or maybe for ϵ▽E(w) entirely)
 2. Stochastic Gradient Descent (SGD) = "Stochastic Approximation of General Gradient of at-this-point-Expected Descent (SAGGED)"
-   - SGD = gradient descent, but based on a random minibatch sample of the training data, but because of that it's not always in the right direction at the current point, but still guarantees convergence.
+   - SGD = gradient descent, but based on a random minibatch sample of the training data, but because of that it's not always in the right direction at the current point, but still guarantees convergence. See definition note at https://github.com/hchiam/machineLearning/blob/master/more_notes/googleMLCrashCourse.md#:~:text=Stochastic%20Gradient%20Descent
    - btw: stochastic vs random vs unpredictable vs chaotic: https://www.quora.com/What-is-the-difference-between-chaotic-systems-and-stochastic-systems
 3. momentum = "friction coefficient" to encourage quicker descent down a shallowly-inclined ravine between steep walls, and avoid simply oscillating between the steep walls. (originally named "momentum hyperparameter")
 4. backpropagation = "loss gradient backpropagation"
