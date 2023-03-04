@@ -75,4 +75,4 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
 - how to remember precision vs recall/sensitivity: https://stats.stackexchange.com/questions/122225/what-is-the-best-way-to-remember-the-difference-between-sensitivity-specificity (TP = True Positive)
   - PREcision = % TP of PREdicted
   - REcall = % TP of REal
-  - (accuracy = TP and TN out of all)
+  - (Accuracy = TP And TN out of All)
