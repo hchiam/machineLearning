@@ -1,5 +1,6 @@
 # Transformers
 
+- watch https://www.youtube.com/watch?v=zxQyTK8quyY
 - watch https://youtu.be/SZorAJ4I-sA and then https://youtu.be/TQQlZhbC5ps
 - positional encoding, attention, self-attention, multi-head attention
 
