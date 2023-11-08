@@ -113,7 +113,7 @@ https://github.com/hchiam/learning-automl
 
 ## Keep up to date:
 
-https://www.youtube.com/@statquest - like this [clear explanation of ROC and AUC](https://www.youtube.com/watch?v=4jRBRDbJemM)
+https://www.youtube.com/@statquest - like this [clear explanation of ROC and AUC](https://www.youtube.com/watch?v=4jRBRDbJemM) or of [transformers](https://www.youtube.com/watch?v=zxQyTK8quyY)
 
 https://www.youtube.com/@TwoMinutePapers
 
