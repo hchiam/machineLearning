@@ -113,6 +113,8 @@ https://github.com/hchiam/learning-automl
 
 ## Keep up to date:
 
+https://www.youtube.com/@statquest - like this [clear explanation of ROC and AUC](https://www.youtube.com/watch?v=4jRBRDbJemM)
+
 https://www.youtube.com/@TwoMinutePapers
 
 https://www.youtube.com/@twimlai - hear about things like AI-GAs, Quality-Diversity algorithms, jailbreaking, filters, adversarial training, pre-training, and more.
