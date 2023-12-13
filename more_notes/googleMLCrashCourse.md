@@ -607,6 +607,10 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
 - read "rules of ML" to learn from others' experiences/mistakes: https://developers.google.com/machine-learning/guides/rules-of-ml
   - bookmarklet to pick a random ML tip to review: https://github.com/hchiam/learning-js/blob/main/bookmarklets/random-ml-tip-from-page.js
 
+## more notes on terminology
+
+https://github.com/hchiam/machineLearning/blob/master/more_notes/misnomersAndConfusingTerms.md
+
 ## practice real-life usage
 
 https://github.com/hchiam/learning-tensorflow/tree/master/my_coursera_notes
