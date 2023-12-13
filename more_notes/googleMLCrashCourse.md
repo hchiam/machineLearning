@@ -521,14 +521,19 @@ correlation_matrix = dataframe.corr() # 1.0 = perfect, 0 = none, -1.0 = reverse 
   - _intuition:_ precision = how much of the time was it reliably "crying wolf"?
   - _mnemonic:_ "p is for prophecy proven-ness".
   - _tends to:_ predict "wolf" only when absolutely sure beyond reasonable doubt.
+  - _helpful over accuracy when:_ unbalanced classes
   - _unhelpful extreme:_ never cry "wolf", and none of your "cries" are disputable, because you made never "cried wolf".
-  - _when it matters more than recall:_ precision matters more when false negatives are acceptable, e.g. spam filter allowing some spam through, but false positives are unacceptable, e.g. you wouldn't want any important emails going into the spam folder.
+  - _when it matters more than recall:_ precision matters more when false negatives are acceptable, e.g. spam filter allowing some spam through, but false positives are unacceptable, e.g. you wouldn't want any important emails going into the spam folder. **you don't want to be WRONG about detections**
 - **recall** = true positives / all actual positives whether predicted or not:
   - _intuition:_ recall = how much of the actual "wolves" did it detect?
   - _mnemonic:_ "recall? wreck all? reckon all? recognize all?"
   - _tends to:_ predict a "wolf" any time hear the "bushes" move.
+  - _helpful over accuracy when:_ unbalanced classes
   - _unhelpful extreme:_ always cry "wolf", and you'll catch all the "wolves".
-  - _when it matters more than precision:_ recall matters more when false negatives are unacceptable, e.g. medical test results, and false positives are acceptable, e.g. positive COVID test is better safe than sorry.
+  - _when it matters more than precision:_ recall matters more when false negatives are unacceptable, e.g. medical test results, and false positives are acceptable, e.g. positive COVID test is better safe than sorry. **you don't want to MISS out on any to detect**
+- aside: https://towardsdatascience.com/should-i-look-at-precision-recall-or-specificity-sensitivity-3946158aace1
+  - **recall** in ML (tp/all actual positives that exist = tp/(tp+fn)) = **sensitivity** in medicine (tp/all actual positives that exist = tp/(tp+fn))
+  - **precision** in ML (tp/predicted positive = tp/(tp+fp)) = **_NOT THE SAME AS_** **specificity** in medicine (tn/all actual negatives that exist = tn/(tn+fp))
 - **precision** and **recall** are often at odds with each other.
 - **precision** and **recall** often need to be balanced.
 - ask for both **precision** and **recall** of a model to evaluate a model.
