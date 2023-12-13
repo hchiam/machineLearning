@@ -76,3 +76,4 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
   - PREcision = % TP of PREdicted
   - REcall = % TP of REal
   - (Accuracy = TP And TN out of All)
+  - (see more notes on precision/recall at https://github.com/hchiam/machineLearning/blob/master/more_notes/googleMLCrashCourse.md)
