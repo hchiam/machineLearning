@@ -16,4 +16,6 @@
 
 ## History
 
-[ANN ("1") -> DNN ("layers") -> RNN ("short-term memory") -> LSTM ("long-term memory") -> GRU ("simplified LSTM")](https://www.cloudskillsboost.google/course_sessions/6505024/video/363229) -> Attention + Transformer + Positional encoding, to better handle sequence-to-sequence tasks.
+[ANN ("1") -> DNN ("layers") -> RNN ("short-term memory") -> LSTM ("long-term memory") -> GRU ("simplified LSTM")](https://www.cloudskillsboost.google/course_sessions/6505024/video/363229) -> Encoder-Decoder (to handle sequence-to-sequence tasks) + Attention -> Transformer ("add self-attention") + Positional encoding.
+
+[Transformers process "all" the words _at the same time_, kinda like the heptapod aliens in the movie Arrival](https://www.youtube.com/live/FduFIwExZ0w?si=2wi3QHS80KAtV_ps&t=1677).
