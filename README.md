@@ -101,6 +101,8 @@ https://github.com/hchiam/nlp_spacy_textacy
 
 For example, here's a video I found helpful for understanding RNNs and LSTM: https://www.freecodecamp.org/learn/machine-learning-with-python/how-neural-networks-work/recurrent-neural-networks-rnn-and-long-short-term-memory-lstm
 
+[LSTM: forget gate to forget irrelevant, input gate to remember relevant, and output gate to update new info](https://www.cloudskillsboost.google/course_sessions/6505024/video/363229)
+
 Then later reading up on attention and Transformers makes more sense.
 
 ## Crash Course AI:
