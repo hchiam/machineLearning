@@ -13,3 +13,7 @@
 - multi-head attention = multiple weighted contributions of context
 - feed-forward / linear = digest
 - softmax = probabilities of possibilities of next word in the target output language for example
+
+## History
+
+[ANN ("1") -> DNN ("layers") -> RNN ("short-term memory") -> LSTM ("long-term memory") -> GRU ("simplified LSTM")](https://www.cloudskillsboost.google/course_sessions/6505024/video/363229) -> Attention + Transformer + Positional encoding, to better handle sequence-to-sequence tasks.
