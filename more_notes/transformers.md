@@ -8,8 +8,9 @@
 2. attention <-- e.g.: look at entire sentence and learn from data which words to pay attention to when translating into a target language word
 3. self-attention = attention but also context of other words in the input sentence to help disambiguate the polysemic meaning of a word
 
-- embedding = meaning
-- positional encoding = context ([because just using embeddings isn't enough: think "bank robber" vs "river bank"](https://www.cloudskillsboost.google/course_sessions/6505024/video/363235))
+- embedding = words with similar usages/meanings get similar coordinates ([but by itself can't differentiate Apple fruit vs Apple brand](https://www.youtube.com/watch?v=qaWMOYf4ri8))
+- positional encoding = word order (https://www.youtube.com/watch?v=qaWMOYf4ri8)
+- attention = context ("gravity pull" from other words in sentence https://www.youtube.com/watch?v=qaWMOYf4ri8)
 - multi-head attention = multiple weighted contributions of context
 - feed-forward / linear = digest
 - softmax = probabilities of possibilities of next word in the target output language for example
