@@ -1,6 +1,6 @@
 # 25 Misnomers and Confusing Technical Terms in ML (Machine Learning)
 
-https://product.hubspot.com/blog/misnomers-and-confusing-terms-in-machine-learning
+https://product.hubspot.com/blog/misnomers-and-confusing-terms-in-machine-learning (but i've also added other notes over time)
 
 (See further sources at that ^ link above.)
 
@@ -15,16 +15,20 @@ Common vocab = convention != beginner-friendly. Sometimes misleading names.
    - multinomial distribution = >2 categories, n trials = n dice rolls
 2. inference = "prediction" (because in stats, an inference is more general, but ML has 2 types of "inference": training/learning time, and prediction time. Only during prediction time does ML call it "inference")
 3. R^2 = "sqrt(R^4)" or just "d", but you might want to use a better statistic anyways. BTW R^2 can surprisingly(?) be negative if the model is worse than trivial baseline (`R^2` = `1 - sum[(y-f)^2] / sum[(y-y)^2]`).
+   - "`R^2`" = how well your model reflects the data, regardless of dataset size or dataset units scale.
    - btw "`R^2`" = (`SSR(mean line if you just always predicted mean)` - `SSR(your line of best fit)`) / (`SSR(mean line if you just always predicted mean)`) = the percent difference of how much your line of best fit decreases the residuals (errors) compared to just always guessing the mean. `R^2` ranges from 0 to 1 for equal to mean to perfect. `R^2` higher percentage = better = (lower `SSR(your line of best fit)` versus `SSR(naive mean line)`).
       - or "`R^2`" also = (`MSE(mean line)` - `MSE(your line of best fit)`) / (`MSE(mean line)`)
       - (but "`R^2`" can also be calculated with respect to other things than the mean line, just to act as baseline comparison)
       - `SSR` = sum of squared residuals (problem with SSR: scales with **size** of **dataset** because amount of residuals naturally increases, which MSE solves)
          - residuals = diffs along the y-axis to the line of best fit, as opposed to perpendicular distance to it, so that both observations and predictions correspond to the same x-axis input
       - as opposed to using `MSE` = mean squared error = `SSR / n` (problem with MSE: scales with **scale** of **dataset**, e.g. cm vs mm vs m, which R^2 solves - R^2 does not depend on the **size** or **scale** of the **dataset**)
-5. multi-armed bandit = "many one-armed bandits" or "stateless reinforcement learning" or "adaptive tests". Like a bunch of slot machines with 1 arm each and different unknown probabilities of success, and you have to decide which, how many times, and in what order to play each slot machine. A subset of stochastic scheduling.
+- p-value = chance of falsely detecting a difference when there is no difference if repeated experiment a bunch of times --> helps with confidence in predictive power of your model.
+   - p-value = detect different
+   - p-value != how different
+4. multi-armed bandit = "many one-armed bandits" or "stateless reinforcement learning" or "adaptive tests". Like a bunch of slot machines with 1 arm each and different unknown probabilities of success, and you have to decide which, how many times, and in what order to play each slot machine. A subset of stochastic scheduling.
       - "`R^2`" = (Pearson's correlation coefficient ρ or r) ^ 2
    - btw: stochastic vs random vs unpredictable vs chaotic: https://www.quora.com/What-is-the-difference-between-chaotic-systems-and-stochastic-systems
-7. regression / logistic regression = "logistic model"
+5. regression / logistic regression = "logistic model"
    - classification for categorical variable, regression for continuous variable
    - but logistic regression is used for classification because it actually outputs a continuous probability number output (stats analysis: continuous value, but ML goal: final classification output)
    - (btw: calibrated to 0-1 range for probability)
